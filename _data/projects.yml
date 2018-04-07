@@ -26,10 +26,6 @@
   url: "https://github.com/shkr/bayesian_regression/blob/master/clrm/results.pdf"
   description: Notes and code from my attempt to build 3 regression models sharing a noisy RV, implemented using pymc3.
 
-- project: ScalaSQL
-  url: "https://github.com/shkr/ScalaSQL/blob/master/SQL.scala"
-  description: A nifty little code for executing single line or multi-line SQL code with optional comments in scala. Only useful if your database, does not have a SQL QueryBuilder api such as Snowflake.
-
 - project: RedditFlow
   url: "https://github.com/shkr/streams"
   description: Made this when I was in love with akka, it listens to the any reddit comment feed ovia Akka HTTP and processs it via Akka Stream then persists the output into an Apache Kafka database.
