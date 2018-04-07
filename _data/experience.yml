@@ -15,4 +15,4 @@
 - company: <a href="https://digitalgreen.org">Digital Green </a>
   position: Machine Learning Engineer
   duration:  November, 2015 &mdash; January, 2016
-  summary: I developed and tested a deep neural network to rank video recommendation for field trip screenings based on strucutured feedback data, comments and attendance information from previous screenings.
+  summary: I worked on a video recommendation engine for real world screenings based on structured feedback data, comments and attendance information from previous screenings. The screenings are educational in nature, and primarily made for farmers in rural villages in India.
