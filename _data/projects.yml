@@ -1,0 +1,39 @@
+# Projects
+- project: pymc3
+  role: contributor
+  url: "https://docs.pymc.io/notebooks/bayesian_neural_network_with_sgfs.html"
+  description: I primarily contribute to the stochastic gradient algorithms module for scalable mcmc. PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning focusing on advanced Markov chain Monte Carlo (MCMC) and variational inference (VI) algorithms.
+
+- project: noisy matrix completion
+  url: "https://github.com/shkr/noisy-matrix-completion"
+  description: After trying to solve missing data problems using some form of a tensor or matrix factorization technique, I figured it was worthwhile implementing my own library of different implementations. These algorithms are commonly used for building recommendation engines.
+
+- project: (incubating) apache superset
+  role: contributor
+  duration: 2017 &mdash; Present
+  url: "https://superset.incubator.apache.org/gallery.html"
+  description: I use it for data exploration and data analysis. I like contributing to new analytics and visualizations. It is an open-source enterprise-ready business intelligence web application developed at airbnb.
+
+- project: physician compare
+  url: "https://github.com/shkr/physician-compare"
+  description: Using a public dataset maintained by Center of Medicare Services (CMS) on every physician that accepts medicare. The data file contains key attributes about the physician and how they are employed in groups. I did a network analysis of the data to find out how physcians work together.
+
+- project: naive bayes binary classifier on Wikipedia articles
+  url: "https://github.com/shkr/wikiclassifier/blob/master/wikiclassifier.pdf"
+  description: A binary naive bayes classifier trained using Akka Streams API. Fast training on a X positive and Y negatively labeled text documents from parsing wikipedia webpages in Z seconds.
+
+- project: Bayesian linear regression
+  url: "https://github.com/shkr/bayesian_regression/blob/master/clrm/results.pdf"
+  description: Notes and code from my attempt to build 3 regression models sharing a noisy RV, implemented using pymc3.
+
+- project: ScalaSQL
+  url: "https://github.com/shkr/ScalaSQL/blob/master/SQL.scala"
+  description: A nifty little code for executing single line or multi-line SQL code with optional comments in scala. Only useful if your database, does not have a SQL QueryBuilder api such as Snowflake.
+
+- project: RedditFlow
+  url: "https://github.com/shkr/streams"
+  description: Made this when I was in love with akka, it listens to the any reddit comment feed ovia Akka HTTP and processs it via Akka Stream then persists the output into an Apache Kafka database.
+
+- project: Dining philosophers and other multi-agent problems
+  url: "https://github.com/shkr/actors"
+  description: An implementation of the dining philosophers problem and otherm multi-agent problems such as shared ledger systems using Akka Actors, Cluster and persistence of state on Apache Cassandra.

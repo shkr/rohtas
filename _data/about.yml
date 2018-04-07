@@ -1,0 +1,30 @@
+# Resume settings
+resume_avatar:                  "true"
+resume_name:                    "Shashank Shekhar"
+resume_title:                   "Data Scientist/Machine Learning Engineer"
+resume_contact_email:           "shashank.f1@gmail.com"
+resume_contact_address:         "San Francisco"
+resume_header_intro: "<p>I like to do data analysis</p>"
+
+# use "yes" to display the email contact button,
+# "no" to display an "I'm not looking for work" message,
+# or remove the resume_looking_for_work option entirely
+# to leave blank
+resume_looking_for_work:        "yes"
+
+# Decide which sections to use
+# comment out to hide
+resume_section_experience:      true
+resume_section_education:       true
+resume_section_projects:        true
+resume_section_interests:       true
+
+# Resume social links
+# uncomment the options you wish to display, and add your own URL
+resume_social_links:
+  resume_github_url:            "https://github.com/shkr"
+  resume_linkedin_url:          "https://www.linkedin.com/in/shashank-shekhar-01506949/"
+resume_print_social_links:      true
+
+# Note: when editing locally, remember to restart
+# your Jekyll server when you edit this file. Changes

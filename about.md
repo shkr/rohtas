@@ -1,7 +1,4 @@
 ---
-layout: post
-title: Rohtas
-permalink: /about/
+layout: about
+title: Shashank Shekhar
 ---
-
-

@@ -1,0 +1,16 @@
+<!-- and guess where these are defined? Yup, you guessed it: the _config.yml file -->
+{% if site.data.about.resume_print_social_links %}
+<ul>
+
+  <!-- GitHub link -->
+  {% if site.data.about.resume_social_links.resume_github_url %}
+  <li><strong>Github</strong>: {{ site.data.about.resume_social_links.resume_github_url }}</li>
+  {% endif %}
+
+  <!-- LinkedIn link -->
+  {% if site.data.about.resume_social_links.resume_linkedin_url %}
+  <li><strong>LinkedIn</strong>: {{ site.data.about.resume_social_links.resume_linkedin_url }}</li>
+  {% endif %}
+
+</ul>
+{% endif %}

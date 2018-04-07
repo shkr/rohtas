@@ -1,0 +1,18 @@
+# Jobs
+# Amino Inc
+- company: <a href="https://amino.com">Amino Inc</a>
+  position: Data Scientist
+  duration: April, 2016 &mdash; Present
+  summary: I work on algorithms and data pipelines for the cost transparency tool. I have written about my work on <a href="https://www.linkedin.com/pulse/demystifying-healthcare-costs-canonical-episodes-care-shekhar/">Demystifying healthcare costs with canonical episodes of care</a> and <a href="https://amino.com/blog/how-deep-learning-can-help-us-understand-physician-specialties-from-billions-of-insurance-claims/">How deep learning can help us understand physician specialties from billions of insurance claims.</a>
+
+# Lumiata Inc
+- company: <a href="https://lumiata.com">Lumiata</a>
+  position: Data Scientist
+  duration:  July, 2014 &mdash; March, 2016
+  summary: I worked as a lead engineer on the design and implementation of algorithms on the data pipelines which ran graph algorithms on billions of claims data from ftp, fhir server or REST API sources, on an open source spark, mesos, akka, cassandra, kafka and spark stack.
+
+# Digital Green
+- company: <a href="https://digitalgreen.org">Digital Green </a>
+  position: Machine Learning Engineer
+  duration:  November, 2015 &mdash; January, 2016
+  summary: I developed and tested a deep neural network to rank video recommendation for field trip screenings based on strucutured feedback data, comments and attendance information from previous screenings.
