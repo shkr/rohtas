@@ -10,9 +10,3 @@
   position: Data Scientist
   duration:  July, 2014 &mdash; March, 2016
   summary: I worked as a lead engineer on the design and implementation of the claims data pipelines which ran graph algorithms on billions of claims data ingested from ftp, fhir server and REST API. We built this on a <a href="https://mesosphere.com/blog/smack-stack-new-lamp-stack/">SMACK stack</a>.
-
-# Digital Green
-- company: <a href="https://digitalgreen.org">Digital Green </a>
-  position: Machine Learning Engineer
-  duration:  November, 2015 &mdash; January, 2016
-  summary: I worked on a video recommendation engine for real world screenings based on structured feedback data, comments and attendance information from previous screenings. The screenings are educational in nature, and primarily made for farmers in rural villages in India.
