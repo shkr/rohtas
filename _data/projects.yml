@@ -28,8 +28,8 @@
 
 - project: RedditFlow
   url: "https://github.com/shkr/streams"
-  description: Made this when I was in love with akka, it listens to the any reddit comment feed ovia Akka HTTP and processs it via Akka Stream then persists the output into an Apache Kafka database.
+  description: Made this with <a href="https://akka.io/">akka</a>, it listens to any reddit comment feed via Akka HTTP and processs it in akka streams. The output is persisted into an apache Kafka queue as the sink.
 
 - project: Dining philosophers and other multi-agent problems
   url: "https://github.com/shkr/actors"
-  description: An implementation of the dining philosophers problem and otherm multi-agent problems such as shared ledger systems using Akka Actors, Cluster and persistence of state on Apache Cassandra.
+  description: An implementation of the dining philosophers problem and other multi-agent problems such as shared ledger systems using akka actors, cluster and persistence on <a href="http://cassandra.apache.org/">apache cassandra</a>
