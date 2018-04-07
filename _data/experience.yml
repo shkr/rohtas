@@ -9,7 +9,7 @@
 - company: <a href="https://lumiata.com">Lumiata</a>
   position: Data Scientist
   duration:  July, 2014 &mdash; March, 2016
-  summary: I worked as a lead engineer on the design and implementation of algorithms on the data pipelines which ran graph algorithms on billions of claims data from ftp, fhir server or REST API sources, on an open source spark, mesos, akka, cassandra, kafka and spark stack.
+  summary: I worked as a lead engineer on the design and implementation of the claims data pipelines which ran graph algorithms on billions of claims data ingested from ftp, fhir server and REST API. We built this on a <a href="https://mesosphere.com/blog/smack-stack-new-lamp-stack/">SMACK stack</a>.
 
 # Digital Green
 - company: <a href="https://digitalgreen.org">Digital Green </a>
