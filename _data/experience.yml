@@ -9,4 +9,4 @@
 - company: <a href="https://lumiata.com">Lumiata</a>
   position: Data Scientist
   duration:  July, 2014 &mdash; March, 2016
-  summary: I worked as a lead engineer on the design and implementation of the claims data pipelines which ran graph algorithms on billions of claims data ingested from ftp, fhir server and REST API. We built this on a <a href="https://mesosphere.com/blog/smack-stack-new-lamp-stack/">SMACK stack</a>.
+  summary: I worked as a lead engineer on the design and implementation of the claims data pipeline. It ran graph algorithms on billions of claim files ingested from ftp, fhir server or REST API. We built this on a <a href="https://mesosphere.com/blog/smack-stack-new-lamp-stack/">SMACK stack</a>.

@@ -2,7 +2,7 @@
 - project: pymc3
   role: contributor
   url: "https://docs.pymc.io/notebooks/bayesian_neural_network_with_sgfs.html"
-  description: I primarily contribute to the stochastic gradient algorithms module for scalable mcmc. PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning focusing on advanced Markov chain Monte Carlo (MCMC) and variational inference (VI) algorithms.
+  description: I contribute to the stochastic gradient algorithms module for scalable mcmc. PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning focusing on advanced Markov chain Monte Carlo (MCMC) and variational inference (VI) algorithms.
 
 - project: noisy matrix completion
   url: "https://github.com/shkr/noisy-matrix-completion"
@@ -10,9 +10,8 @@
 
 - project: (incubating) apache superset
   role: contributor
-  duration: 2017 &mdash; Present
   url: "https://superset.incubator.apache.org/gallery.html"
-  description: I use it for data exploration and data analysis. I like contributing to new analytics and visualizations. It is an open-source enterprise-ready business intelligence web application developed at airbnb.
+  description: I have contributed to visualizations. I use it for data exploration and data analysis for my projects. It is an open-source enterprise-ready business intelligence web application.
 
 - project: physician compare
   url: "https://github.com/shkr/physician-compare"
