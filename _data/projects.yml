@@ -19,16 +19,16 @@
 
 - project: naive bayes binary classifier on Wikipedia articles
   url: "https://github.com/shkr/wikiclassifier/blob/master/wikiclassifier.pdf"
-  description: A binary naive bayes classifier trained using Akka Streams API. Fast training on a X positive and Y negatively labeled text documents from parsing wikipedia webpages in Z seconds.
+  description: Multi-threaded training of a binary naive bayes classifier using akka streams. Fast training on a X positive and Y negatively labeled text documents from parsing wikipedia webpages in Z seconds.
 
 - project: Bayesian linear regression
   url: "https://github.com/shkr/bayesian_regression/blob/master/clrm/results.pdf"
-  description: Notes and code from my attempt to build 3 regression models sharing a noisy RV, implemented using pymc3.
+  description: Notes and code from my attempt to build 3 regression models with heavy tailed noise from a common RV, implemented using pymc3.
 
 - project: RedditFlow
   url: "https://github.com/shkr/streams"
-  description: Made this with <a href="https://akka.io/">akka</a>, it listens to any reddit comment feed via Akka HTTP and processs it in akka streams. The output is persisted into an apache Kafka queue as the sink.
+  description: Made this with <a href="https://akka.io/">akka</a>, it listens to any reddit comment feed via akka HTTP and processes it using akka streams. The output is persisted into an apache kafka queue as the sink.
 
 - project: Dining philosophers and other multi-agent problems
   url: "https://github.com/shkr/actors"
-  description: An implementation of the dining philosophers problem and other multi-agent problems such as shared ledger systems using akka actors, cluster and persistence on <a href="http://cassandra.apache.org/">apache cassandra</a>
+  description: An implementation of the dining philosophers problem and other multi-agent problems such as shared ledger systems using akka actors, cluster with data persistence on <a href="http://cassandra.apache.org/">apache cassandra</a>
