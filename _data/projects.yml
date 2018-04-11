@@ -19,7 +19,7 @@
 
 - project: Classifying wikipedia pages as `disease` or `not disease`
   url: "https://github.com/shkr/wikiclassifier/blob/master/wikiclassifier.pdf"
-  description: Implemented multi-threaded training of a naive bayes classifier on word category co-occurence using akka streams. It trains on 10k negative and 3.4k positive html files in 30 seconds on a macbook.
+  description: Implemented multi-threaded training of a naive bayes classifier using akka streams. It trains on 10k negative and 3.4k positive html files in 30 seconds on a macbook.
 
 - project: Bayesian linear regression
   url: "https://github.com/shkr/bayesian_regression/blob/master/clrm/results.pdf"
