@@ -4,7 +4,7 @@
   url: "https://docs.pymc.io/notebooks/bayesian_neural_network_with_sgfs.html"
   description: I contribute to the stochastic gradient algorithms module for scalable mcmc. PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning focusing on advanced Markov chain Monte Carlo (MCMC) and variational inference (VI) algorithms.
 
-- project: noisy matrix completion
+- project: Noisy matrix completion
   url: "https://github.com/shkr/noisy-matrix-completion"
   description: After trying to solve missing data problems using some form of a tensor or matrix factorization technique, I figured it was worthwhile implementing my own library of different implementations. These algorithms are commonly used for building recommendation engines.
 
@@ -13,11 +13,11 @@
   url: "https://superset.incubator.apache.org/gallery.html"
   description: I have contributed to visualizations. I use it for data exploration and data analysis for my projects. It is an open-source enterprise-ready business intelligence web application.
 
-- project: physician compare
+- project: Physician compare
   url: "https://github.com/shkr/physician-compare"
   description: Using a public dataset maintained by Center of Medicare Services (CMS) on every physician that accepts medicare. The data file contains key attributes about the physician and how they are employed in groups. I did a network analysis of the data to find out how physcians work together.
 
-- project: naive bayes binary classifier on wikipedia articles
+- project: Naive bayes Disease vs Not Disease classifier on wikipedia articles
   url: "https://github.com/shkr/wikiclassifier/blob/master/wikiclassifier.pdf"
   description: multi-threaded training of a naive bayes binary word-category co-occurence classifier using akka streams. It trains on 10k negative and 3.4k positive html files in 30 seconds on a macbook.
 
