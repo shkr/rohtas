@@ -6,39 +6,46 @@ categories: analytical
 ---
 
 
-'''
-Yesterday, 45 minutes of my life was taken up by scrawling my signature and date across 
-the bottom of home care forms. Truth be told, I'm not really sure what these forms do, except 
-allow the agencies that are delivering care to our patients in the community to say 
-"look, see this, Dr. Pelzman signed it and says we can do it, so therefore we are justified in 
-getting paid."
-'''
 
-I chanced about this book "How are days became numbered" around the same time I had decided 
-to put together a hackers guide to healthcare data. A book on the growth of insurance corporations
-and their evolving practises to do extensive record keeping and records sharing. Each step 
-of their record keeping business data entry, data collection and statistical analysis 
-was responsible to a long functioning insurancy conpany that could larger numbers of policies year after year
-without taking losses. Jumping ahead to the present, though the data has moved 
-from paper to ftp servers the data generating processes continue to be the same,
-though technology has significantly changed the volume at which it is being collected, and companies 
-have found new buyers, in pharmas.
- 
-"Deep Patient: An Unsupervised Representation to Predict the Future of Patients from the Electronic Health Records" published last year
-showed how one can organize electronic health records to predict likely diagnoses for patients. Electronic health
-records is everything that has medical records, clinical notes, claims, remittances and even genomics data. The healthcare IT infrastructure
-which stores this data is owned by the hospital system, insurers or a health data company which sources it from them. Pharmaceutical companies
-are big buyer of healthcare data. In this work, they sources data from hospitals, it could have existed in csv, cclf, fhir and other formats 
-I am not aware of. The data can has clinical notes which are unstructured text. 
-In this case it is from hospitals, but SCs, outpatient clinics, SNF and hospices are categories of medical facilities which have patient data. 
-Some general demographic details (i.e., age, gender and race), and common clinical descriptors available in a structured format such as ICD-9 
-codes, NDC codes, CPT codes, and LOINC codes, as well as free-text clinical notes is recorded. There are multiple EHR 
-data vendors that are used by healthcare providers to record this data as per regulation. 
+>  Yesterday, 45 minutes of my life was taken up by scrawling my signature and date across the bottom of home care forms. Truth be told, I'm not really sure what these forms do, except allow the agencies that are delivering care to our patients in the community to say look, see this, Dr. Pelzman signed it and says we can do it, so therefore we are justified in getting paid.
+>
+> [medpagetoday.com](https://www.medpagetoday.com/patientcenteredmedicalhome/patientcenteredmedicalhome/72962?xid=nl_mpt_Quiz_2018-05-18&eun=g972116d0r) / Show Me Where to Sign  by Fred N. Pelzman, MD                                                                                                               May 18, 2018                                                                     
 
-Claims are documents that are wired via revenue cycle systems or other enterprise software to the insurance companies. They have plan information, 
-provider information and a negotiated fee schedule against which they process the claim along with all patient relevent data that I have stated. 
- 
-There is purpose behind each of those data types, ICDs are diagnoses, NDCs are medication, CPTs are procedures, LOINCs are laboratory 
+
+
+I read "How are days became numbered" around the same time I had decided to put together a 
+hackers guide to healthcare data. A stitched together version of healthcare claims data knowledge I have accumulated from books, blog, published work and people who have worked in the healthcare industry. As a software engineer I was not able to find one good introduction of healthcare claims data that would let me just focus on figuring out what code I had to write for making data pipelines. This challenge is not unknown, healthcare IT is a tough space to break into as a software engineer or a software company. 
+
+"How are days became numbered" is a book which describes the evolution of data aggregation practises at insurance corporations. Data aggregation by insurance corporations has way over a century now has  allowed them to calculate and underwrite risk of policies that they sell. Companies used data aggregated from large letter writing networks, research organizations and sometimes even individualized risk cards much like credit score reporting agencies of today for assessing risk of policyholders. They grouped individuals into risk pools, a process described as classing. In order to underwrite they just needed a way to assess the risk of paying out policies before time. Companies hired actuaries and experts to set these premiums and dividend returns and provided them with the data for it. Today, healthcare data has moved from paper to ftp servers and data collection work has moved into doctors offices. But, the biggest consumers of healthcare data continue to be insurance companies and they have a strong influence on the supply side of healthcare data.
+
+Hospitals collect and store electronic health records including but not limited to claims, prescriptions, orders for tests, viewing laboratory or imaging results, and clinical progress notes. In a published deep learning work, "Deep Patient: An Unsupervised Representation to Predict the Future of Patients from the Electronic Health Records" showed how one can process hospital data (they used data from Mount Sinai hospital system) and using a data driven way identify key features that can identify future diagnoses for a patient. 
+
+EHR/EMR software is used by hospitals, clinics, rehab centers and other medical facilities to collect this type of healthcare data. These softwares sometimes provide features like clinical decision support rules or system to aid the clinician's workflow. Integrated software solutions scrubs the EHR data to submit electronic claim files to the payer. The file format depends on the use case between the provider and payer.
+
+| Provider                |                 Semantic File Type                 |                 Payer |
+| ----------------------- | :------------------------------------------------: | --------------------: |
+| Admitting               |              Eligibility Inquiry 270               | Verification Function |
+| Admitting               |              Eligibility Inquiry 271               | Verification Function |
+| Utilization Review      |             Certification Request 278              |    Utilization Review |
+| Utilization Review      |             Certification Response 278             |    Utilization Review |
+| Billing and Collections |                Claim/Encounter 837                 |     Claims Processing |
+| Billing and Collections |                 Status Inquiry 276                 |     Claims Processing |
+| Billing and Collections |                Status Response 277                 |     Claims Processing |
+| Billing and Collections |               Payment/Remittance 835               |     Claims Processing |
+| Treasury                | 835 with payment from providers to payers via bank |              Treasury |
+
+Often providers often send these electronic claim submissions to clearinghouses which act as a central hub where all the data files are sorted and directed to their respective insurance carriers. They use internal software to receive claims from healthcare providers, scrub them for errors and formats if required as per HIPAA and insurance standards. The field name definitions of these file formats are maintained in a data dictionary which is used to encode data into an X12 formt during exchange. CSV, XML or piped separation is also sometimes used to encode these files when exchanging. They have an important role because medical practises send high quantities of insurance claim files.
+
+Another recent work on https://arxiv.org/abs/1801.07860 https://www.nature.com/articles/srep26094 talks about how "We propose a representation of patients’ entire, raw EHR records based on the Fast Healthcare Interoperability Resources (FHIR) format. "
+
+So what is this FHIR and what is good about it? FHIR is data format for storing EHR data, just how 'graph' database like neo4j is a better way to store network data rather than a bunch of PostGREs tables, because data and metadata is easily retreivable. 
+FHIR specification is publicly available, it defines where the diagnosis, procedure, encountry type etc information should be stored so that it is indexed in a way that makes the writing data pipelines code, easier. In this work they were able to leverage it to pull together all the EHR stored in FHIR format about a patient and condense it into a semantic vector.
+
+Sending over the claims is just the first part, it is followed by adjudiction. This is where your insurance company runs it checks and sends an adjustment file, a remit file with an approved/denied flag to notify the provider whether the provider is going to get paid or not.
+
+So why does it happen can't the provider do the checks on their own? In the process they make necessary adjustments to the claims based on information that better maintained by insurance companies.
+
+Claim or Encounter 837 files or 837 There is purpose behind each of those data types, ICDs are diagnoses, NDCs are medication, CPTs are procedures, LOINCs are laboratory 
 tests and clinical notes are generally written by the doctor.  
 
 Each of the coding system has a fully fledged ontology which is also consistently evolving. For example ICD coding system has moved from
@@ -47,29 +54,9 @@ at a varying levels of granularities.
 
 CPTs are released by AAPC. They have over the years, evolved into being very specific. For outpatient procedures, the reimbursement is negotiated
 for groups of such codes. CMS releases a fee schedule that Medicare agrees to pay to clinics for each of the services.
-A good book called "Fixing Healthcare Prices" discusses how the Physician Fee Schedule controls commercial prices, a trillion dollar industry however
-the price fixes are the providers themselves.
 
 
-Another recent work on https://arxiv.org/abs/1801.07860 https://www.nature.com/articles/srep26094 talks about how 
-"We propose a representation of patients’ entire, raw EHR records based on the Fast Healthcare Interoperability Resources (FHIR) format. "
-So what is this FHIR and what is good about it? FHIR is data format for storing EHR data, just how 'graph' database like neo4j is a better
-way to store network data rather than a bunch of PostGREs tables, because data and metadata is easily retreivable. 
-FHIR specification is publicly available, it defines where the diagnosis, procedure, encountry type etc information should be stored so that
-it is indexed in a way that makes the writing data pipelines code, easier. In this work they were able to leverage it to pull together 
-all the EHR stored in FHIR format about a patient and condense it into a semantic vector.
-
-
-Sending over the claims is just the first part, it is followed by adjudiction. This is where your insurance company runs it checks and sends 
-an adjustment file, a remit file with an approved/denied flag to notify the provider whether the provider is going to get paid or not.
-So why does it happen can't the provider do the checks on their own? In the process they make necessary adjustments to the claims based
-on information that better maintained by insurance companies.
-
-The remittances or 835s contain most importantly cost information and line item based amt_allowed. Often the bill that you get from your hospital,
-where they calculate your co-pay etc contains most of the information present in remit.
-
-
-So ERAs have prices, how are healthcare prices decied
+The remittances or 835s contain most importantly cost information and line item based amt_allowed. Often the bill that you get from your hospital, where they calculate your co-pay etc contains most of the information present in remit.
 
 '''
 42 U.S. Code Subchapter XVIII - HEALTH INSURANCE FOR AGED AND DISABLED
@@ -98,7 +85,7 @@ stating the amount it has agreed to pay to the provider.
 The revenue codes are used by providers to charge a lump sum. 
 
 8. How does inpatient billing work? (Acute Inpatient Care) and what is DRG?
-In July 2013 Medi-Cal adopted a diagnosis-related groups (DRG) Groups (DRG)	
+	n July 2013 Medi-Cal adopted a diagnosis-related groups (DRG) Groups (DRG)	
 reimbursement methodology for inpatient general acute care hospitals that do not 
 participate in certified public expenditure reimbursement.  DRG is a reimbursement 
 methodology that uses information on the claim form (including revenue codes, 
@@ -119,11 +106,11 @@ Part 3
 ---
 How is it related to cashflow, or how does it link to real dollars?
 9. Why is there a premium and what is an HSA, Classing vs Smoothing - The actuarials struggle
-What are these other things?
-Co-Pay, Deductibles, AMT_ALLOWED, PATIENT_RESPONSIBILITY_AMT, CONTRACT ADJUSTMENT AMOUNT
+  What are these other things?
+  Co-Pay, Deductibles, AMT_ALLOWED, PATIENT_RESPONSIBILITY_AMT, CONTRACT ADJUSTMENT AMOUNT
     Ask for contract adjustment, find deductible, find how much you have to pay
 10. Who owns the data pipelines?
-The data pipelines 
+  The data pipelines 
 11. Market Share of different hospital chains and labs in the provider space
 12. Market Share of different payers
 
