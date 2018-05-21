@@ -18,11 +18,13 @@ hackers guide to healthcare data. A stitched together version of healthcare clai
 
 "How are days became numbered" is a book which describes the evolution of data aggregation practises at insurance corporations. Data aggregation by insurance corporations has way over a century now has  allowed them to calculate and underwrite risk of policies that they sell. Companies used data aggregated from large letter writing networks, research organizations and sometimes even individualized risk cards much like credit score reporting agencies of today for assessing risk of policyholders. They grouped individuals into risk pools, a process described as classing. In order to underwrite they just needed a way to assess the risk of paying out policies before time. Companies hired actuaries and experts to set these premiums and dividend returns and provided them with the data for it. Today, healthcare data has moved from paper to ftp servers and data collection work has moved into doctors offices. But, the biggest consumers of healthcare data continue to be insurance companies and they have a strong influence on the supply side of healthcare data.
 
+## File Types
+
 Hospitals collect and store electronic health records including but not limited to claims, prescriptions, orders for tests, viewing laboratory or imaging results, and clinical progress notes. In a published deep learning work, "Deep Patient: An Unsupervised Representation to Predict the Future of Patients from the Electronic Health Records" showed how one can process hospital data (they used data from Mount Sinai hospital system) and using a data driven way identify key features that can identify future diagnoses for a patient. 
 
 EHR/EMR software is used by hospitals, clinics, rehab centers and other medical facilities to collect this type of healthcare data. These softwares sometimes provide features like clinical decision support rules or system to aid the clinician's workflow. Integrated software solutions scrubs the EHR data to submit electronic claim files to the payer. The file format depends on the use case between the provider and payer.
 
-| Provider                |                 Semantic File Type                 |                 Payer |
+| Provider                |                Semantic File Format                |                 Payer |
 | ----------------------- | :------------------------------------------------: | --------------------: |
 | Admitting               |              Eligibility Inquiry 270               | Verification Function |
 | Admitting               |              Eligibility Inquiry 271               | Verification Function |
@@ -34,29 +36,30 @@ EHR/EMR software is used by hospitals, clinics, rehab centers and other medical 
 | Billing and Collections |               Payment/Remittance 835               |     Claims Processing |
 | Treasury                | 835 with payment from providers to payers via bank |              Treasury |
 
-Often providers often send these electronic claim submissions to clearinghouses which act as a central hub where all the data files are sorted and directed to their respective insurance carriers. They use internal software to receive claims from healthcare providers, scrub them for errors and formats if required as per HIPAA and insurance standards. The field name definitions of these file formats are maintained in a data dictionary which is used to encode data into an X12 formt during exchange. CSV, XML or piped separation is also sometimes used to encode these files when exchanging. They have an important role because medical practises send high quantities of insurance claim files.
+Providers send these electronic claim submissions to clearinghouses which act as a central hub where all the data files are sorted and directed to their respective insurance carriers. They use internal software to receive claims from healthcare providers, scrub them for errors and formats if required as per HIPAA and insurance standards. The field name definitions of these file formats are maintained in a data dictionary which is used to encode data into an X12 formt during exchange. CSV, XML or piped separation is also sometimes used to encode these files when exchanging. They have an important role because medical practises send high quantities of insurance claim files.
 
-Another recent work on https://arxiv.org/abs/1801.07860 https://www.nature.com/articles/srep26094 talks about how "We propose a representation of patients’ entire, raw EHR records based on the Fast Healthcare Interoperability Resources (FHIR) format. "
+## Concept Identifiers
 
-So what is this FHIR and what is good about it? FHIR is data format for storing EHR data, just how 'graph' database like neo4j is a better way to store network data rather than a bunch of PostGREs tables, because data and metadata is easily retreivable. 
-FHIR specification is publicly available, it defines where the diagnosis, procedure, encountry type etc information should be stored so that it is indexed in a way that makes the writing data pipelines code, easier. In this work they were able to leverage it to pull together all the EHR stored in FHIR format about a patient and condense it into a semantic vector.
+Another work quoted below on integrating machine learning workflows to healthcare data shows how custom electronics health records with clinical notes informtion can be transformed and stored as FHIR resources to improve effectiveness of deep learning models for personialized clinical prediction on patient data.
 
-Sending over the claims is just the first part, it is followed by adjudiction. This is where your insurance company runs it checks and sends an adjustment file, a remit file with an approved/denied flag to notify the provider whether the provider is going to get paid or not.
+> Our central insight was that rather than explicitly harmonizing EHR data, mapping it into a highly curated set of structured predictors variables and then feeding those variables into a statistical model, we could instead learn to simultaneously harmonize inputs and predict medical events through direct feature learning.
+>
+> https://arxiv.org/ftp/arxiv/papers/1801/1801.07860.pdf
 
-So why does it happen can't the provider do the checks on their own? In the process they make necessary adjustments to the claims based on information that better maintained by insurance companies.
+FHIR is a data interchange  specification supports semantic and encoding scheme interoperability between software systems. There are a standard set of field names and values defined as resource types in the FHIR specification. Usage of FHIR can allow any software to read and interpret data from a varierty of EHR systems. Patient, DiagnosticReport, Claim, Observation, PaymentNotice are some examples of  FHIR resource types. 
 
-Claim or Encounter 837 files or 837 There is purpose behind each of those data types, ICDs are diagnoses, NDCs are medication, CPTs are procedures, LOINCs are laboratory 
-tests and clinical notes are generally written by the doctor.  
+Because EHR data is used for insurance claims, medical practitioners carefully encode patient information in diagnosis codes such (ex: ICD9, ICD10), procedure codes (ex: CPT codes, HCPCS codes), medication codes (NDC, RXNORM) for prescriptions, lab result codes and lab order (LOINC) codes for accurate billing and payment from the  payers after adjudication. There exists redundancy across these coding systems. However the coding organizations rarely do official releases of crosswalks between these coding systems. SNOMED is a comprehensive coding system encompassing diagnosis, symptoms, procedures concepts, therefore there are crosswalks available between SNOMED and ICD, SNOMED and CPT. But fee schedules such as the CMS Physician Fee Schedule, Inpatient Billing Systems and most outpatient billing contracts between healthcare providers and payers set rules conditioned on ICD, CPT, revenue codes and DRG codes, not SNOMED codes. 
 
-Each of the coding system has a fully fledged ontology which is also consistently evolving. For example ICD coding system has moved from
-version 9 to version 10 as per regulation, and there is already ICD11 on the way. Each of these codes is an identifier for a diagnosis
-at a varying levels of granularities. 
+837 files typically contain primary and secondary diagnosis information about the patient encoded as ICD9 or ICD10 codes for the encounter period of the claim.  These files have a list of service lines containing CPT or HCPCS codes fo medical procedures performed during the encounter period. Field by Field information.
 
-CPTs are released by AAPC. They have over the years, evolved into being very specific. For outpatient procedures, the reimbursement is negotiated
+ICD and CPTs are released by AAPC, they have hierarchy. They have over the years, evolved into being very specific. For outpatient procedures, the reimbursement is negotiated
 for groups of such codes. CMS releases a fee schedule that Medicare agrees to pay to clinics for each of the services.
 
+The remittances or 835s contain most importantly cost information and line item based amt_allowed. Often the bill that you get from your hospital, where they calculate your co-pay etc contains most of the information present in remit. Fields in 835
 
-The remittances or 835s contain most importantly cost information and line item based amt_allowed. Often the bill that you get from your hospital, where they calculate your co-pay etc contains most of the information present in remit.
+
+
+## Billing Practises
 
 '''
 42 U.S. Code Subchapter XVIII - HEALTH INSURANCE FOR AGED AND DISABLED
@@ -69,6 +72,7 @@ cost reporting period to the extent such costs exceed the applicable percentage 
  of such costs for all hospitals in the same grouping as such hospital for comparable time periods.
 '''https://www.law.cornell.edu/uscode/text/42/1395ww 
 
+Focus on billing software vendors and techniques not specifics
 
 Setting prices is a billion dollar industry (rought estimate from 3M etc). Keeping in the spirit of the post, if you are in data science and
 if you have dealt with remits or claims, you might have seen the provider billing npi field. This is the National Provider Identifier NPI used by 
@@ -102,29 +106,14 @@ Source:
 https://files.medi-cal.ca.gov/pubsdoco/publications/masters-mtp/.../revcdip_i00.doc
 
 
-Part 3
----
-How is it related to cashflow, or how does it link to real dollars?
 9. Why is there a premium and what is an HSA, Classing vs Smoothing - The actuarials struggle
   What are these other things?
   Co-Pay, Deductibles, AMT_ALLOWED, PATIENT_RESPONSIBILITY_AMT, CONTRACT ADJUSTMENT AMOUNT
     Ask for contract adjustment, find deductible, find how much you have to pay
-10. Who owns the data pipelines?
-  The data pipelines 
-11. Market Share of different hospital chains and labs in the provider space
-12. Market Share of different payers
+10. 
 
 
-Part 4
+Sources and related reading
 ---
-Resources for
-
-13. Hospital Compare and other datasets like physician compare
-14. CMS Medicare Physician Fee Schedule and other medicare release fee schedule
-15. Cost for Inpatient (Average cost statistics for Hospitals)
-16. Cost for Outpatient (Amino.com)
-
-
-
 
 
