@@ -38,7 +38,7 @@ EHR/EMR software is used by hospitals, clinics, rehab centers and other medical 
 
 Providers send these electronic claim submissions to clearinghouses which act as a central hub where all the data files are sorted and directed to their respective insurance carriers. They use internal software to receive claims from healthcare providers, scrub them for errors and formats if required as per HIPAA and insurance standards. The field name definitions of these file formats are maintained in a data dictionary which is used to encode data into an X12 formt during exchange. CSV, XML or piped separation is also sometimes used to encode these files when exchanging. They have an important role because medical practises send high quantities of insurance claim files.
 
-## Concept Identifiers
+## Coding Systems
 
 Another work quoted below on integrating machine learning workflows to healthcare data shows how custom electronics health records with clinical notes informtion can be transformed and stored as FHIR resources to improve effectiveness of deep learning models for personialized clinical prediction on patient data.
 
@@ -50,29 +50,29 @@ FHIR is a data interchange  specification supports semantic and encoding scheme 
 
 Because EHR data is used for insurance claims, medical practitioners carefully encode patient information in diagnosis codes such (ex: ICD9, ICD10), procedure codes (ex: CPT codes, HCPCS codes), medication codes (NDC, RXNORM) for prescriptions, lab result codes and lab order (LOINC) codes for accurate billing and payment from the  payers after adjudication. There exists redundancy across these coding systems. However the coding organizations rarely do official releases of crosswalks between these coding systems. SNOMED is a comprehensive coding system encompassing diagnosis, symptoms, procedures concepts, therefore there are crosswalks available between SNOMED and ICD, SNOMED and CPT. But fee schedules such as the CMS Physician Fee Schedule, Inpatient Billing Systems and most outpatient billing contracts between healthcare providers and payers set rules conditioned on ICD, CPT, revenue codes and DRG codes, not SNOMED codes. 
 
-837 files are composed of two parts, a header and a list of service lines. The header contains primary and secondary diagnosis information about the patient encoded as ICD9 or ICD10 codes for the encounter period of the claim. Electronic claim filing code indicator, electronic payer code, allowed amount, allowed billed, and other fields. The service lines have CPT, HCPCS and revenue codes to bill for the procedures performed during the encounter period. 
+837 files are composed of two parts, a header and a list of service lines. The header contains primary and secondary diagnosis information about the patient encoded as ICD9 or ICD10 codes for the encounter period of the claim. These diagnosis codes are sometimes used for adjudication. Electronic claim filing code indicator, electronic payer code, allowed amount, allowed billed, and other fields that are required for routing the claim by the clearing house and generate a remittance response in return from the insurer are present in th header. The service lines have CPT, HCPCS and revenue codes which itemizes the procedures performed during the encounter period. 
 
-ICD and CPTs are released by AAPC, they have hierarchy. They have over the years, evolved into being very specific. For outpatient procedures, the reimbursement is negotiated
-for groups of such codes. CMS releases a fee schedule that Medicare agrees to pay to clinics for each of the services.
+ICD 9 codes are used for many purposes. In hospital claims diagnosis codes along with other codes and information are used to assign a diagnosis related group category code and a severity index during an inpatient stay. CMS uses Hierarchical Condition Category (HCC) coding to calculate different payments for medicare advantage patients based on the diagnosis codes present in their recent medical history, age, gender and other clinical rules. Healthcare IT is transitioning from ICD9 to ICD10.
+
+CPT codes released by AAPC. These codes have an inherent hierarchy just like ICD codes. For outpatient procedures, the reimbursement is negotiated for groups of such codes. CMS releases a fee schedule that Medicare agrees to pay to clinics for each of the services.
+
+Revenue codes
+
+LOINC codes
+
+RXNORM, Veteran NDC
 
 The remittances or 835s contain most importantly cost information and line item based amt_allowed. Often the bill that you get from your hospital, where they calculate your co-pay etc contains most of the information present in remit. Fields in 835
 
+## Entities
 
-
-## Billing Practises
-
-'''
-42 U.S. Code Subchapter XVIII - HEALTH INSURANCE FOR AGED AND DISABLED
-42 U.S. Code § 1395ww - Payments to hospitals for inpatient hospital services
-
-(1)(A)(i) The Secretary, in determining the amount of the payments that may be made under this subchapter with 
-respect to operating costs of inpatient hospital services (as defined in paragraph (4)) shall not recognize as 
-reasonable (in the efficient delivery of health services) costs for the provision of such services by a hospital for a 
-cost reporting period to the extent such costs exceed the applicable percentage (as determined under clause (ii)) of the average
- of such costs for all hospitals in the same grouping as such hospital for comparable time periods.
-'''https://www.law.cornell.edu/uscode/text/42/1395ww 
-
-Focus on billing software vendors and techniques not specifics
+> 42 U.S. Code Subchapter XVIII - HEALTH INSURANCE FOR AGED AND DISABLED
+>
+> 42 U.S. Code § 1395ww - Payments to hospitals for inpatient hospital services
+>
+> (1)(A)(i) The Secretary, in determining the amount of the payments that may be made under this subchapter with respect to operating costs of inpatient hospital services (as defined in paragraph (4)) shall not recognize as reasonable (in the efficient delivery of health services) costs for the provision of such services by a hospital for a cost reporting period to the extent such costs exceed the applicable percentage (as determined under clause (ii)) of the average of such costs for all hospitals in the same grouping as such hospital for comparable time periods.
+>
+> —  https://www.law.cornell.edu/uscode/text/42/1395ww 
 
 Setting prices is a billion dollar industry (rought estimate from 3M etc). Keeping in the spirit of the post, if you are in data science and
 if you have dealt with remits or claims, you might have seen the provider billing npi field. This is the National Provider Identifier NPI used by 
@@ -102,6 +102,10 @@ Health Care Services (DHCS), DRG payment is for each admit through discharge cla
 Refer to the Diagnosis-Related Groups (DRG):  Inpatient Services section in this 
 provider manual for additional information.
 
+NPIs
+
+
+
 Source:
 https://files.medi-cal.ca.gov/pubsdoco/publications/masters-mtp/.../revcdip_i00.doc
 
@@ -110,7 +114,6 @@ https://files.medi-cal.ca.gov/pubsdoco/publications/masters-mtp/.../revcdip_i00.
   What are these other things?
   Co-Pay, Deductibles, AMT_ALLOWED, PATIENT_RESPONSIBILITY_AMT, CONTRACT ADJUSTMENT AMOUNT
     Ask for contract adjustment, find deductible, find how much you have to pay
-10. 
 
 
 Sources and related reading
