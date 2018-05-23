@@ -13,6 +13,12 @@ categories: analytical
 
 
 
+![OpenEMR - Web snapshot of an open source implementation of an EMR System](https://www.dropbox.com/s/08c7lzxq4kvt8v3/Screen%20Shot%202018-05-23%20at%207.33.29%20AM.png?dl=1)
+
+​							https://www.open-emr.org/
+
+
+
 I read "How are days became numbered" around the same time I had decided to put together a 
 hackers guide to healthcare data. A stitched together version of healthcare claims data knowledge I have accumulated from books, blog, published work and people who have worked in the healthcare industry. As a software engineer I was not able to find one good introduction of healthcare claims data that would let me just focus on figuring out what code I had to write for making data pipelines. This challenge is not unknown, healthcare IT is a tough space to break into as a software engineer or a software company. 
 
@@ -48,6 +54,12 @@ Another work quoted below on integrating machine learning workflows to healthcar
 
 FHIR is a data interchange  specification supports semantic and encoding scheme interoperability between software systems. There are a standard set of field names and values defined as resource types in the FHIR specification. Usage of FHIR can allow any software to read and interpret data from a varierty of EHR systems. Patient, DiagnosticReport, Claim, Observation, PaymentNotice are some examples of  FHIR resource types. 
 
+![Scalable and accurate deep learning with electronic health records, Alvin Rajkomar et. Al 2018](https://www.dropbox.com/s/kp1p3ayve1nrukr/Screen%20Shot%202018-05-23%20at%207.41.33%20AM.png?dl=1)
+
+​         Scalable and accurate deep learning with electronic health records, Alvin Rajkomar et. al (2018) 
+
+
+
 Because EHR data is used for insurance claims, medical practitioners carefully encode patient information in diagnosis codes such (ex: ICD9, ICD10), procedure codes (ex: CPT codes, HCPCS codes), medication codes (NDC, RXNORM) for prescriptions, lab result codes and lab order (LOINC) codes for accurate billing and payment from the  payers after adjudication. There exists redundancy across these coding systems. However the coding organizations rarely do official releases of crosswalks between these coding systems. SNOMED is a comprehensive coding system encompassing diagnosis, symptoms, procedures concepts, therefore there are crosswalks available between SNOMED and ICD, SNOMED and CPT. But fee schedules such as the CMS Physician Fee Schedule, Inpatient Billing Systems and most outpatient billing contracts between healthcare providers and payers set rules conditioned on ICD, CPT, revenue codes and DRG codes, not SNOMED codes. 
 
 837 files are composed of two parts, a header and a list of service lines. The header contains primary and secondary diagnosis information about the patient encoded as ICD9 or ICD10 codes for the encounter period of the claim. Electronic claim filing code indicator, electronic payer code, allowed amount, allowed billed, and other fields. The service lines have CPT (HCPCS Level I), HCPCS (Level 2) and revenue codes for the services rendered during the encounter period. CPT, HCPCS Level 2 were developed and currently maintained by American Medical Association AMA, ICD Panel, HCPCS National Panel respectively. Based on information from their [website](https://www.cdc.gov/nchs/icd/index.htm), National Center for Health Statistics (NCHS) has a role in the development of ICD9 and ICD10.  
@@ -74,14 +86,14 @@ These coding systems are used to calculate some weighted risk formula in value b
 >
 > — https://www.law.cornell.edu/uscode/text/42/1395ww 
 
+Cost data: Diagnosis-related groups (DRG) Groups (DRG) reimbursement methodology used at inpatient general acute care hospitals uses information on the claim form (including revenue codes, diagnosis and procedure codes, patient’s age, discharge status and complications) to classify the hospital stay into a group.  DRG payment is determined by multiplying a specific DRG relative weight of the individual group code by a DRG hospital’s specific DRG base price, with application of adjustors and add-on payments as applicable. Before this they used revenue codes. These DRG codes are calculated based on patient's health status at the time of admission. APR-DRG coding system has a severity level defined for each of its DRG codes, it requires very detailed information about the healthcare profile of the patient in order to be assigned. Refer to cost files. 
 
+Patient Generated Data: Fitbit etc
 
-In July 2013 Medi-Cal adopted a diagnosis-related groups (DRG) Groups (DRG)	reimbursement methodology for inpatient general acute care hospitals that do not participate in certified public expenditure reimbursement.  DRG is a reimbursement methodology that uses information on the claim form (including revenue codes, diagnosis and procedure codes, patient’s age, discharge status and complications) to classify the hospital stay into a group.  DRG payment is determined by multiplying a specific DRG relative weight of the individual group code by a DRG hospital’s specific DRG base price, with application of adjustors and add-on payments as applicable. If a Treatment Authorization Request (TAR) has been approved by the Department of Health Care Services (DHCS), DRG payment is for each admit through discharge claim. Refer to the Diagnosis-Related Groups (DRG):  Inpatient Services section in this provider manual for additional information. Before this they used revenue codes. These DRG codes are calculated based on patient's health status at the time of admission. APR-DRG coding system has a severity level defined for each of its DRG codes, it requires very detailed information about the healthcare profile of the patient in order to be assigned. 
+HCAHPS data: 
 
-CMS Medicare Advantage uses HCC Coding in its payment system to assign a risk score to each of its patient based on the patients medical history using diagnosis codes and other information about the patients. There are quality systems defined based on ICD codes. These are rules that are used in clnicial decision support systems. 
+Clinical Data: CMS Medicare Advantage uses HCC Coding in its payment system to create a risk score for patients based on their past medical history represented using ICD diagnosis codes and other information such as age about the patients. There are quality systems defined based on ICD codes. Clinicial decision support rules use these coding systems for stratitification of patient populations by care management entities such as large hospital systems and payers.  For example, Framingham Risk Score is a gender specific used to estimate the 10-year cardiovascular risk of an individual using age, gender, tobacco smoker indicator, Systolic blood pressure along with HDL and total cholesterol levels. The thresholds on scores have been found to underestimate or overestimate risk in some population types. For example Framingham Risk Score can overestimate or underestimate risk for hispanic and native american population in US as described in this work, <u>Improving Global Vascular Risk Prediction With Behavioral and Anthropometric Factors: The Multiethnic NOMAS (Northern Manhattan Cohort Study) Ralph L.Sacco MD, MS et. al (2006).</u>
 
-In clinical trials, patient health status has to be assessed with finer details. Genomics data about a patient have seen to correlate with trails outcomes. This level of data is tedious to extract because these are often handwritten clinical notes, chart information, and file uploads of genomic text files. 
+Pharma & Genomics data - In clinical trials, patient health status has to be assessed with finer details. Genomics data about a patient have seen to correlate with trails outcomes. This level of data is tedious to extract because these are often handwritten clinical notes, chart information, and file uploads of genomic text files. 
 
-
-
-You can write to me at hackersguidetohealthcaredata@gmail.com if you have ideas or data for new sections I should add in this summary. Surely, put your feedback and criticism in the comments section below.
+You can write to me at hackersguidetohealthcaredata@gmail.com. If you have ideas or data for new sections I should have been present here, please write to me. Surely, put your feedback in the comments section below.
