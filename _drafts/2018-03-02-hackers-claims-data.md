@@ -50,70 +50,38 @@ FHIR is a data interchange  specification supports semantic and encoding scheme 
 
 Because EHR data is used for insurance claims, medical practitioners carefully encode patient information in diagnosis codes such (ex: ICD9, ICD10), procedure codes (ex: CPT codes, HCPCS codes), medication codes (NDC, RXNORM) for prescriptions, lab result codes and lab order (LOINC) codes for accurate billing and payment from the  payers after adjudication. There exists redundancy across these coding systems. However the coding organizations rarely do official releases of crosswalks between these coding systems. SNOMED is a comprehensive coding system encompassing diagnosis, symptoms, procedures concepts, therefore there are crosswalks available between SNOMED and ICD, SNOMED and CPT. But fee schedules such as the CMS Physician Fee Schedule, Inpatient Billing Systems and most outpatient billing contracts between healthcare providers and payers set rules conditioned on ICD, CPT, revenue codes and DRG codes, not SNOMED codes. 
 
-837 files are composed of two parts, a header and a list of service lines. The header contains primary and secondary diagnosis information about the patient encoded as ICD9 or ICD10 codes for the encounter period of the claim. Electronic claim filing code indicator, electronic payer code, allowed amount, allowed billed, and other fields. The service lines have CPT, HCPCS and revenue codes to bill for the procedures performed during the encounter period. 
+837 files are composed of two parts, a header and a list of service lines. The header contains primary and secondary diagnosis information about the patient encoded as ICD9 or ICD10 codes for the encounter period of the claim. Electronic claim filing code indicator, electronic payer code, allowed amount, allowed billed, and other fields. The service lines have CPT (HCPCS Level I), HCPCS (Level 2) and revenue codes for the services rendered during the encounter period. CPT, HCPCS Level 2 were developed and currently maintained by American Medical Association AMA, ICD Panel, HCPCS National Panel respectively. Based on information from their [website](https://www.cdc.gov/nchs/icd/index.htm), National Center for Health Statistics (NCHS) has a role in the development of ICD9 and ICD10.  
 
-ICD and CPTs are released by AAPC, they have hierarchy. They have over the years, evolved into being very specific. For outpatient procedures, the reimbursement is negotiated
-for groups of such codes. CMS releases a fee schedule that Medicare agrees to pay to clinics for each of the services.
+ICD, CPT, HCPCS are some examples of medical coding systems, there are plenty. LOINC is a coding system for health measurements, observations, and documents such as lab test orders and lab results. There is overlap between coding systems. A GFRAA > 120 in LOINC is equal to CARDIAC DEFIB in ICD. There are no official crosswalks between any two of these coding systems. SNOMED Clinical Terminology has a coding system which is expansive and covers services rendered, diagnosis, symptom, demographi information. SNOMED has released crosswalk between SNOMED CT codes and ICD10. Crosswalks between coding systems can be created via SNOMED-CT.
 
-The remittances or 835s contain most importantly cost information and line item based amt_allowed. Often the bill that you get from your hospital, where they calculate your co-pay etc contains most of the information present in remit. Fields in 835
+ICDs and CPTs have a hierarchichal coding structure. Adjacent codes in a sorted list of CPTs and ICDs are mean different versions of the same procedure such as abdominal-mri with contrast 74182 and abdominal-mri without contrast 74181. Unless the codes belong to two different groups. The group of a CPT or ICD code can be identified from the first two digits of the code. NDC is a coding system used to identify prescrition drugs in claims. RXNORM is standardized name respository for medication and links to NDC and other prescription drug coding systems. 
 
+These coding systems are used to calculate some weighted risk formula in value based payment systems. Insurance corporations can also use them to negotiate cost of service. For example, CMS developed and maintains a physician fee schedule with medicare's amount allowed for each of the outpatient services identified using CPT codes. 
 
-
-## Billing Practises
-
-'''
-42 U.S. Code Subchapter XVIII - HEALTH INSURANCE FOR AGED AND DISABLED
-42 U.S. Code § 1395ww - Payments to hospitals for inpatient hospital services
-
-(1)(A)(i) The Secretary, in determining the amount of the payments that may be made under this subchapter with 
-respect to operating costs of inpatient hospital services (as defined in paragraph (4)) shall not recognize as 
-reasonable (in the efficient delivery of health services) costs for the provision of such services by a hospital for a 
-cost reporting period to the extent such costs exceed the applicable percentage (as determined under clause (ii)) of the average
- of such costs for all hospitals in the same grouping as such hospital for comparable time periods.
-'''https://www.law.cornell.edu/uscode/text/42/1395ww 
-
-Focus on billing software vendors and techniques not specifics
-
-Setting prices is a billion dollar industry (rought estimate from 3M etc). Keeping in the spirit of the post, if you are in data science and
-if you have dealt with remits or claims, you might have seen the provider billing npi field. This is the National Provider Identifier NPI used by 
-healthcare service providers to  claim a reimbursement for your use of healthcare. They definitely maintain their own identifiers to group
-of these NPIs since rates are generally negotiated at a level higher than NPIs. 
-
-Insurers negotiate prices for individual services or blocks of services. These services are encoded using
-Services given to the patient are itemized using Current Procedure Terminology codes. These codes
-are used to calculate bills to be paid to the provider. The provider sends the codes in a claim
-for adjudication and then the payer after processing the claim, sends an Electornic Remittance Advices
-stating the amount it has agreed to pay to the provider.  
-
-7. How does outpatient billing work and what is REVENUE_CODE?
-The revenue codes are used by providers to charge a lump sum. 
-
-8. How does inpatient billing work? (Acute Inpatient Care) and what is DRG?
-	n July 2013 Medi-Cal adopted a diagnosis-related groups (DRG) Groups (DRG)	
-reimbursement methodology for inpatient general acute care hospitals that do not 
-participate in certified public expenditure reimbursement.  DRG is a reimbursement 
-methodology that uses information on the claim form (including revenue codes, 
-diagnosis and procedure codes, patient’s age, discharge status and complications) to 
-classify the hospital stay into a group.  DRG payment is determined by multiplying a 
-specific DRG relative weight of the individual group code by a DRG hospital’s specific 
-DRG base price, with application of adjustors and add-on payments as applicable.  
-If a Treatment Authorization Request (TAR) has been approved by the Department of 
-Health Care Services (DHCS), DRG payment is for each admit through discharge claim.
-Refer to the Diagnosis-Related Groups (DRG):  Inpatient Services section in this 
-provider manual for additional information.
-
-Source:
-https://files.medi-cal.ca.gov/pubsdoco/publications/masters-mtp/.../revcdip_i00.doc
+835 files are sent after the claim is submitted. It might include adjustments such as denial or partial payment for the encounter period on the claim. It is composed of two parts, header and service lines. It has the codes submitted in the claim and the amount allowed for the corresponding submitted claim. Both 837 and 835 files have NPI in the form of BILLING NPI, PROVIDER NPI, REFERRING PROVIDER NPI which identifies the National Provider Identification code of the medical facility which is billing, the medical practitioner who rendered services listed on the claim, the medical practitioner who referred the patient to the provider mentioned in the submitted claim. 835 files contain fields such AMOUNT ALLOWED, BILLED AMOUNT, CO-PAY AMOUNT, DEDUCTIBLE etc. These values can be used to calculate the discount offered to the payer by the provider. 
 
 
-9. Why is there a premium and what is an HSA, Classing vs Smoothing - The actuarials struggle
-  What are these other things?
-  Co-Pay, Deductibles, AMT_ALLOWED, PATIENT_RESPONSIBILITY_AMT, CONTRACT ADJUSTMENT AMOUNT
-    Ask for contract adjustment, find deductible, find how much you have to pay
-10. 
+
+## Sources of healthcare data 
+
+![](https://s86vkjuqei14qm8e2sawxz2m-wpengine.netdna-ssl.com/wp-content/uploads/Most-Useful-Sources-of-Health-Care-Data-Today-and-in-5-Years.png)
+
+>  42 U.S. Code Subchapter XVIII - HEALTH INSURANCE FOR AGED AND DISABLED
+>
+> 42 U.S. Code § 1395ww - Payments to hospitals for inpatient hospital services
+>
+> (1)(A)(i) The Secretary, in determining the amount of the payments that may be made under this subchapter with respect to operating costs of inpatient hospital services (as defined in paragraph (4)) shall not recognize as reasonable (in the efficient delivery of health services) costs for the provision of such services by a hospital for a cost reporting period to the extent such costs exceed the applicable percentage (as determined under clause (ii)) of the average of such costs for all hospitals in the same grouping as such hospital for comparable time periods.
+>
+> — https://www.law.cornell.edu/uscode/text/42/1395ww 
 
 
-Sources and related reading
----
+
+In July 2013 Medi-Cal adopted a diagnosis-related groups (DRG) Groups (DRG)	reimbursement methodology for inpatient general acute care hospitals that do not participate in certified public expenditure reimbursement.  DRG is a reimbursement methodology that uses information on the claim form (including revenue codes, diagnosis and procedure codes, patient’s age, discharge status and complications) to classify the hospital stay into a group.  DRG payment is determined by multiplying a specific DRG relative weight of the individual group code by a DRG hospital’s specific DRG base price, with application of adjustors and add-on payments as applicable. If a Treatment Authorization Request (TAR) has been approved by the Department of Health Care Services (DHCS), DRG payment is for each admit through discharge claim. Refer to the Diagnosis-Related Groups (DRG):  Inpatient Services section in this provider manual for additional information. Before this they used revenue codes. These DRG codes are calculated based on patient's health status at the time of admission. APR-DRG coding system has a severity level defined for each of its DRG codes, it requires very detailed information about the healthcare profile of the patient in order to be assigned. 
+
+CMS Medicare Advantage uses HCC Coding in its payment system to assign a risk score to each of its patient based on the patients medical history using diagnosis codes and other information about the patients. There are quality systems defined based on ICD codes. These are rules that are used in clnicial decision support systems. 
+
+In clinical trials, patient health status has to be assessed with finer details. Genomics data about a patient have seen to correlate with trails outcomes. This level of data is tedious to extract because these are often handwritten clinical notes, chart information, and file uploads of genomic text files. 
 
 
+
+You can write to me at hackersguidetohealthcaredata@gmail.com if you have ideas or data for new sections I should add in this summary. Surely, put your feedback and criticism in the comments section below.
