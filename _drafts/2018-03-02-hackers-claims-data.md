@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Hacker's Guide to understanding healthcare claims data"
-date:   2018-03-02 18:42:04 -0800
+title:  "Hacker's summary of healthcare data"
+date:   2018-05-24 18:42:04 -0800
 categories: analytical
 ---
 
@@ -46,13 +46,13 @@ Providers send these electronic claim submissions to clearinghouses which act as
 
 ## Concept Identifiers
 
-Another work quoted below on integrating machine learning workflows to healthcare data shows how custom electronics health records with clinical notes informtion can be transformed and stored as FHIR resources to improve effectiveness of deep learning models for personialized clinical prediction on patient data.
+Another work quoted below on integrating machine learning workflows to healthcare data shows how custom electronics health records with clinical notes information can be transformed and stored as FHIR resources to improve effectiveness of deep learning models for personialized clinical prediction on patient data.
 
 > Our central insight was that rather than explicitly harmonizing EHR data, mapping it into a highly curated set of structured predictors variables and then feeding those variables into a statistical model, we could instead learn to simultaneously harmonize inputs and predict medical events through direct feature learning.
 >
 > https://arxiv.org/ftp/arxiv/papers/1801/1801.07860.pdf
 
-FHIR is a data interchange  specification supports semantic and encoding scheme interoperability between software systems. There are a standard set of field names and values defined as resource types in the FHIR specification. Usage of FHIR can allow any software to read and interpret data from a varierty of EHR systems. Patient, DiagnosticReport, Claim, Observation, PaymentNotice are some examples of  FHIR resource types. 
+FHIR is a data interchange specification which supports a semantic encoding scheme that can be used to exchange data between software systems. There are a standard set of field names and values defined as resource types in the FHIR specification. Usage of FHIR can allow any software to read and interpret data from a varierty of EHR systems. Patient, DiagnosticReport, Claim, Observation, PaymentNotice are some examples of  FHIR resource types. 
 
 ![Scalable and accurate deep learning with electronic health records, Alvin Rajkomar et. Al 2018](https://www.dropbox.com/s/kp1p3ayve1nrukr/Screen%20Shot%202018-05-23%20at%207.41.33%20AM.png?dl=1)
 
@@ -86,14 +86,36 @@ These coding systems are used to calculate some weighted risk formula in value b
 >
 > — https://www.law.cornell.edu/uscode/text/42/1395ww 
 
-Cost data: Diagnosis-related groups (DRG) Groups (DRG) reimbursement methodology used at inpatient general acute care hospitals uses information on the claim form (including revenue codes, diagnosis and procedure codes, patient’s age, discharge status and complications) to classify the hospital stay into a group.  DRG payment is determined by multiplying a specific DRG relative weight of the individual group code by a DRG hospital’s specific DRG base price, with application of adjustors and add-on payments as applicable. Before this they used revenue codes. These DRG codes are calculated based on patient's health status at the time of admission. APR-DRG coding system has a severity level defined for each of its DRG codes, it requires very detailed information about the healthcare profile of the patient in order to be assigned. Refer to cost files. 
+Clinical Data
 
-Patient Generated Data: Fitbit etc
+CMS Medicare Advantage uses HCC Coding in its payment system to create a risk score for patients based on their past medical history represented using ICD diagnosis codes and other information such as age about the patients. Clinicial decision support rules also make use of coding systems for stratitifying patient populations for assigning better care management practicesby their hospital systems and payers.  For example, Framingham Risk Score is a gender specific used to estimate the 10-year cardiovascular risk of an individual using age, gender, tobacco smoker indicator, Systolic blood pressure along with HDL and total cholesterol levels. The thresholds on scores have been found to underestimate or overestimate risk in some population types. For example Framingham Risk Score can overestimate or underestimate risk for hispanic and native american population in US as described in this work, <u>Improving Global Vascular Risk Prediction With Behavioral and Anthropometric Factors: The Multiethnic NOMAS (Northern Manhattan Cohort Study) Ralph L.Sacco MD, MS et. al (2006).</u> 
 
-HCAHPS data: 
+Cost data
 
-Clinical Data: CMS Medicare Advantage uses HCC Coding in its payment system to create a risk score for patients based on their past medical history represented using ICD diagnosis codes and other information such as age about the patients. There are quality systems defined based on ICD codes. Clinicial decision support rules use these coding systems for stratitification of patient populations by care management entities such as large hospital systems and payers.  For example, Framingham Risk Score is a gender specific used to estimate the 10-year cardiovascular risk of an individual using age, gender, tobacco smoker indicator, Systolic blood pressure along with HDL and total cholesterol levels. The thresholds on scores have been found to underestimate or overestimate risk in some population types. For example Framingham Risk Score can overestimate or underestimate risk for hispanic and native american population in US as described in this work, <u>Improving Global Vascular Risk Prediction With Behavioral and Anthropometric Factors: The Multiethnic NOMAS (Northern Manhattan Cohort Study) Ralph L.Sacco MD, MS et. al (2006).</u>
+Diagnosis-related groups (DRG) Groups (DRG) reimbursement methodology used at inpatient general acute care hospitals uses information on the claim form (including revenue codes, diagnosis and procedure codes, patient’s age, discharge status and complications) to classify the hospital stay into a group.  DRG payment is determined by multiplying a specific DRG relative weight of the individual group code by a DRG hospital’s specific DRG base price, with application of adjustors and add-on payments as applicable. Before this they used revenue codes. These DRG codes are calculated based on patient's health status at the time of admission. APR-DRG coding system has a severity level defined for each of its DRG codes, it requires very detailed information about the healthcare profile of the patient in order to be assigned. Refer to cost files. 
 
-Pharma & Genomics data - In clinical trials, patient health status has to be assessed with finer details. Genomics data about a patient have seen to correlate with trails outcomes. This level of data is tedious to extract because these are often handwritten clinical notes, chart information, and file uploads of genomic text files. 
+Patient generated data or data not in EHR systems thus way more efficient, is aggregated from Fitbit, MapMyRun, Apple Health and other software products which are directly used by consumers. This algorithm on cardiac arrythmia uses heart pulse rate. This data sources are also administered by HIPAA regulation however, the practices may differ between companies. 
 
-You can write to me at hackersguidetohealthcaredata@gmail.com. If you have ideas or data for new sections I should have been present here, please write to me. Surely, put your feedback in the comments section below.
+Patient Preference or Survey data
+
+HCAHPS (the Hospital Consumer Assessment of Healthcare Providers and Systems) is a patient satisfaction survey required by CMS (the Centers for Medicare and Medicaid Services) for all hospitals in the United States.  The Survey is for adult inpatients, excluding psychiatric patients.  MGH administers the survey to our patients by phone shortly after discharge. 
+
+Leapfrog and quality scores
+
+Other survey data
+
+Pharma & Genomics data 
+
+In clinical trials, patient health status has to be assessed with finer details. Genomics data about a patient have seen to correlate with trails outcomes. This level of data is tedious to extract because these are often handwritten clinical notes, chart information, and file uploads of genomic text files. 
+
+Parsing Patient Qualification Criteria, clinicaltrials.gov
+
+NDC, VETERANS, RXNORM, UPTODATE are sources on medication. There are companies like generable that hope to bring bayesian statistics to pharmacokinetics.
+
+
+
+-----
+
+
+
+If you have ideas, criticism or data for new sections that should have been present here but I missed it, please write to me at hackersguidetohealthcaredata@gmail.com or discuss in the comments section below.
