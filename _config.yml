@@ -29,6 +29,9 @@ sass:
 
 theme: tale
 
+header_pages:
+  - about.md
+
 # Resume Theme
 resume_theme:   default
 

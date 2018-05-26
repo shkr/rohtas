@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: solitary
 title:  "Hacker's guide to healthcare data"
-date:   2018-05-24 18:42:04 -0800
 comments: true
+site.header_pages: false
 categories: analytical
 ---
 
