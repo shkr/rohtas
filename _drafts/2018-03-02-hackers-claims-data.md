@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Hacker's summary of healthcare data"
+title:  "Hacker's guide to healthcare data"
 date:   2018-05-24 18:42:04 -0800
+comments: true
 categories: analytical
 ---
 
@@ -86,31 +87,19 @@ These coding systems are used to calculate some weighted risk formula in value b
 >
 > — https://www.law.cornell.edu/uscode/text/42/1395ww 
 
-Clinical Data
 
-CMS Medicare Advantage uses HCC Coding in its payment system to create a risk score for patients based on their past medical history represented using ICD diagnosis codes and other information such as age about the patients. Clinicial decision support rules also make use of coding systems for stratitifying patient populations for assigning better care management practicesby their hospital systems and payers.  For example, Framingham Risk Score is a gender specific used to estimate the 10-year cardiovascular risk of an individual using age, gender, tobacco smoker indicator, Systolic blood pressure along with HDL and total cholesterol levels. The thresholds on scores have been found to underestimate or overestimate risk in some population types. For example Framingham Risk Score can overestimate or underestimate risk for hispanic and native american population in US as described in this work, <u>Improving Global Vascular Risk Prediction With Behavioral and Anthropometric Factors: The Multiethnic NOMAS (Northern Manhattan Cohort Study) Ralph L.Sacco MD, MS et. al (2006).</u> 
 
-Cost data
+Healthcare companies medical providers, and insurance companies alike leverage data for financial and health risk assessment of patient populations. For medicare advantage, CMS uses HCC Coding in its payment system to create a risk score for patients based on their past medical history represented using ICD diagnosis codes and other information such as age about the patients. Clinicial decision support rules also make use of diagnosis codes to stratitify patient populations such that medical providers can provide better care management practices in a timely and effective manner.  Framingham Risk Score is a gender specific rule to estimate the 10-year cardiovascular risk of an individual using age, gender, tobacco smoker indicator, systolic blood pressure along with HDL and total cholesterol levels. It has been found that thresholds on the scores does not generalize because it can overestimate or underestimate risks consistently for some population types. For example, Framingham Risk Score can overestimate or underestimate risk for hispanic and native american population in US as described in this work, <u>Improving Global Vascular Risk Prediction With Behavioral and Anthropometric Factors: The Multiethnic NOMAS (Northern Manhattan Cohort Study) Ralph L.Sacco MD, MS et. al (2006).</u> 
 
-Diagnosis-related groups (DRG) Groups (DRG) reimbursement methodology used at inpatient general acute care hospitals uses information on the claim form (including revenue codes, diagnosis and procedure codes, patient’s age, discharge status and complications) to classify the hospital stay into a group.  DRG payment is determined by multiplying a specific DRG relative weight of the individual group code by a DRG hospital’s specific DRG base price, with application of adjustors and add-on payments as applicable. Before this they used revenue codes. These DRG codes are calculated based on patient's health status at the time of admission. APR-DRG coding system has a severity level defined for each of its DRG codes, it requires very detailed information about the healthcare profile of the patient in order to be assigned. Refer to cost files. 
+In inpatient general acute care hospitals DRG (Diagnosis Related Groups) coding system is used to classify stays based on affected organ system, surgical procedures performed on patients, morbidity and sex of the patient. It accounts for up to eight diagnoses and a primary diagnosis, along with upto six procedures performed during the stay.
 
-Patient generated data or data not in EHR systems thus way more efficient, is aggregated from Fitbit, MapMyRun, Apple Health and other software products which are directly used by consumers. This algorithm on cardiac arrythmia uses heart pulse rate. This data sources are also administered by HIPAA regulation however, the practices may differ between companies. 
+Healthcare Cost and Utilization Project (HCUP) develops and maintains many databases containing information about inpatient stays, pediatric inpatient discharges, emergeny department visits and readmissions. National Inpatient Sample (NIS) has data on nationwide all-payer inpatient discharges by collecting ICD, CPT, MS-DRG codes, hospital information, patient demographic and location information along with total charges during the course of the stay. 
 
-Patient Preference or Survey data
+Charges in an inpatient stay are calculated using a DRG payment systems. Many companies including 3M develop DRG billing software system for hospitals taking care of commercial or medicare patients. Healthcare Cost Institute releases reports on commercial DRG rates using a database of commercial 835 and 837 files. 
 
-HCAHPS (the Hospital Consumer Assessment of Healthcare Providers and Systems) is a patient satisfaction survey required by CMS (the Centers for Medicare and Medicaid Services) for all hospitals in the United States.  The Survey is for adult inpatients, excluding psychiatric patients.  MGH administers the survey to our patients by phone shortly after discharge. 
+There are many survey oranizations which aggregate data from survey experiments or deidentified information summary data available from healthcare providers and insurance companies.  HCAHPS (the Hospital Consumer Assessment of Healthcare Providers and Systems) is a patient satisfaction survey developed and maintained by by CMS (the Centers for Medicare and Medicaid Services) for all hospitals in the United States. Leapfrog group collects and shares quality metrics on hospitals. 
 
-Leapfrog and quality scores
-
-Other survey data
-
-Pharma & Genomics data 
-
-In clinical trials, patient health status has to be assessed with finer details. Genomics data about a patient have seen to correlate with trails outcomes. This level of data is tedious to extract because these are often handwritten clinical notes, chart information, and file uploads of genomic text files. 
-
-Parsing Patient Qualification Criteria, clinicaltrials.gov
-
-NDC, VETERANS, RXNORM, UPTODATE are sources on medication. There are companies like generable that hope to bring bayesian statistics to pharmacokinetics.
+Biomedical information which includes pharma development is available in journals and articles. A coding system MeSH (Medical Subject Headings) is used for indexing journals, book and articles in life sciences. Clinical trial study records are indexed with MeSH headings. A clinical trial is a research study in which patients are  assigned to interventions such as a drug, medical device or procedure and the effect of the intervention is calculated on the health outcomes that are measured. NIH's ClinicalTrials.gov is a database of the reasearch studies that are running or complete. Data is provided on a voluntary basis and it also has compliance issues. This website was created as a result of FDA Modernization Act of 1997.  Records are available as xml files, and notes are indexed with MeSH headings. These studies require specific composition of patient attributes in the patient sample used for the study. These attributes can be specific about genders, age groups, past medical histories and genetic traits. Recruiting for clinical trials is a cumbersome process. EHR and claims information on a patient which includes ICD codes, CPT codes, RX Norm medication names, NDC codes is used to aid the process of recruiting qualifying patients for a clinical study. Pharama companies are big buyers of healthcare data.
 
 
 
@@ -118,4 +107,4 @@ NDC, VETERANS, RXNORM, UPTODATE are sources on medication. There are companies l
 
 
 
-If you have ideas, criticism or data for new sections that should have been present here but I missed it, please write to me at hackersguidetohealthcaredata@gmail.com or discuss in the comments section below.
+Thanks for reading this far! When building data pipelines for healthcare claims data, I have often wanted to lookup information about the healthcare IT infrastructure, and background knowledge on data sources to design and write better code. This post is my attempt to aggregate in one place for reference, all the useful piecewise information that I have learned about healthcare IT for the purposes of understanding healthcare data. I hope it solves that purpose for someone else too. If you have ideas, criticism or data for this post, please write to me at hackersguidetohealthcaredata@gmail.com or you can comment on the post.
