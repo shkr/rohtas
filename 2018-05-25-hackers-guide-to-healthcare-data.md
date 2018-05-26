@@ -2,8 +2,6 @@
 layout: solitary
 title:  "Hacker's guide to healthcare data"
 comments: true
-site.header_pages: false
-categories: analytical
 ---
 
 
@@ -102,9 +100,13 @@ There are many survey oranizations which aggregate data from survey experiments 
 Biomedical information which includes pharma development is available in journals and articles. A coding system MeSH (Medical Subject Headings) is used for indexing journals, book and articles in life sciences. Clinical trial study records are indexed with MeSH headings. A clinical trial is a research study in which patients are  assigned to interventions such as a drug, medical device or procedure and the effect of the intervention is calculated on the health outcomes that are measured. NIH's ClinicalTrials.gov is a database of the reasearch studies that are running or complete. Data is provided on a voluntary basis and it also has compliance issues. This website was created as a result of FDA Modernization Act of 1997.  Records are available as xml files, and notes are indexed with MeSH headings. These studies require specific composition of patient attributes in the patient sample used for the study. These attributes can be specific about genders, age groups, past medical histories and genetic traits. Recruiting for clinical trials is a cumbersome process. EHR and claims information on a patient which includes ICD codes, CPT codes, RX Norm medication names, NDC codes is used to aid the process of recruiting qualifying patients for a clinical study. Pharama companies are big buyers of healthcare data.
 
 
+----
+****
 
------
 
-
-
-Thanks for reading this far! When building data pipelines for healthcare claims data, I have often wanted to lookup information about the healthcare IT infrastructure, and background knowledge on data sources to design and write better code. This post is my attempt to aggregate in one place for reference, all the useful piecewise information that I have learned about healthcare IT for the purposes of understanding healthcare data. I hope it solves that purpose for someone else too. If you have ideas, criticism or data for this post, please write to me at hackersguidetohealthcaredata@gmail.com or you can comment on the post.
+Thanks for reading this far! In my experience of building data pipelines, 
+I have found it rather difficult to find one comprehensive reference source on claims data. 
+Data dictionaries that are generally shared with the data are inadeuate in providing adequate information
+to work with the data. This post is my attempt to aggregate in one place all the piecewise information I have learnt about
+healthcare IT for reference. I hope you find it helpful. If you have any positive,
+negative or constructive feedback please write to me at hackersguidetohealthcaredata@gmail.com, so I can make this post better!
