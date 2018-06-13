@@ -16,9 +16,7 @@ Software engineers and analysts who have worked with healthcare data and consequ
 
 Finding online documentation is plain difficult. So even if somehow you are in a company with access to healthcare data, data wrangling is slow, painful and sometimes impossible. Gathering domain knowledge resources sufficient enough to perform data wrangling in healthcare IT is a long educative process. After gathering knowledge resources, navigating those resource references is also a productivity killer, if you are writing code everyday and have other challenges to work with. I figured I could make my life easier by stitching together that knowledge into one comprehensive post, a guide to healthcare data. 
 
-## Table of Contents
-
-
+Table of Contents
 
 * TOC
 {:toc}
