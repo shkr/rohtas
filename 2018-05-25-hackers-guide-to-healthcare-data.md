@@ -8,7 +8,7 @@ comments: true
 
 > Yesterday, 45 minutes of my life was taken up by scrawling my signature and date across the bottom of home care forms. Truth be told, I’m not really sure what these forms do, except allow the agencies that are delivering care to our patients in the community to say look, see this, Dr. Pelzman signed it and says we can do it, so therefore we are justified in getting paid.       
 >
-> <u>[Show Me Where to Sign](https://www.medpagetoday.com/patientcenteredmedicalhome/patientcenteredmedicalhome/72962?xid=nl_mpt_Quiz_2018-05-18&eun=g972116d0r) by Fred N. Pelzman, MD May 18, 2018 on medpagetoday.com</u>
+> [Show Me Where to Sign](https://www.medpagetoday.com/patientcenteredmedicalhome/patientcenteredmedicalhome/72962?xid=nl_mpt_Quiz_2018-05-18&eun=g972116d0r) by Fred N. Pelzman, MD May 18, 2018 on medpagetoday.com
 
 Getting an introduction to healthcare data is hard. This is because it's not well standardized and comprehensive oversight needs to be painfully assembled by going through countless books, blogs, published work etc.  
 
