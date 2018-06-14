@@ -110,7 +110,7 @@ NIH’s ClinicalTrials.gov is a database of the research studies that are runnin
 
 ![img](https://lh6.googleusercontent.com/IXxXPkljItndU_7MNwZJ01zGZWHo0mQBJvhFBwpA11SdMWcBfdwmWKIfstnKWjHM0ZaQcyOQrArSQvUCYDn5qBIAOv7LZY0JA-SvK5kiXnkdQSEUvzaeiO1KQGnHLGDFqm6WTvGe)
 
-Healthcare companies, medical providers, and insurance companies alike leverage healthcare data for health risk assessment of patients populations and, financial risk and budgeting of their healthcare spending. 
+Healthcare companies, medical providers, and insurance companies alike leverage healthcare data for health and financial risk assessment of patients populations. The information is used for budgeting of their healthcare spending. 
 
 CPT is developed and maintained by American Medical Association AMA. The CMS Physician Fee Schedule (PFS) is developed by CMS in joint partnership with the AMA. The fee schedule lists CPT codes for physician services, diagnostic services and radiology services and the corresponding amount payable by Medicare to the providers rendering those services. Prices are indexed by Medicare Administrative Contractor (MAC) Localities which is assigned a geographical area containing one or more zip codes. 
 
