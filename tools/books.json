@@ -1,0 +1,23 @@
+[
+    {
+          "title": "Pale Blue Dot",
+          "author": "Carl Sagan",
+          "genre": "Science, Non Fiction, Philosophy",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/61663.Pale_Blue_Dot_",
+              "image": "https://d.gr-assets.com/books/1432031108l/61663.jpg",
+              "genre": "Science, Non Fiction, Science > Astronomy, Space, Philosophy"
+          }
+    },
+
+    {
+          "title": "Contact",
+          "author": "Carl Sagan",
+          "genre": "Science Fiction, Fiction",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/61666.Contact",
+              "image": "https://d.gr-assets.com/books/1408792653l/61666.jpg",
+              "genre": "Science Fiction, Fiction, Science Fiction Fantasy, Space, Classics, Fantasy, Novels, Speculative Fiction, Religion, Science > Astronomy"
+          }
+    }
+]
