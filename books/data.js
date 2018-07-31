@@ -68,9 +68,9 @@ var BOOKS = {
   },
 "11": {
     "title": "Desert Solitaire",
-    "image": "books/images/17717.jpg",
+    "image": "books/images/214614.jpg",
     "genre": "Fiction,Geography>Utah",
-    "url": "https://www.goodreads.com/book/show/17717.Labyrinths"
+    "url": "https://www.goodreads.com/book/show/214614.Desert_Solitaire"
   },
 "12": {
     "title": "The End of History and the Last Man",
