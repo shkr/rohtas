@@ -27,7 +27,7 @@ sass:
   load_paths:
     - _sass
 
-theme: tale
+remote_theme: shkr/tale
 
 header_pages:
   - abous.md
