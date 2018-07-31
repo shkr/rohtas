@@ -31,7 +31,7 @@ remote_theme: shkr/tale
 
 header_pages:
   - about
-  - पुस्तकालय
+  - reading
 
 # Resume Theme
 resume_theme:   default
