@@ -31,5 +31,9 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 # Gem paginate
 gem "jekyll-paginate"
 
-# Gems required for theme
+# Gem required for theme
 gem "jekyll-remote-theme"
+
+# Gem redirect
+gem 'jekyll-redirect-from'
+

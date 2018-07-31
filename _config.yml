@@ -31,7 +31,7 @@ remote_theme: shkr/tale
 
 header_pages:
   - about
-  - reading
+  - पुस्तकालय
 
 # Resume Theme
 resume_theme:   default
@@ -43,6 +43,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-remote-theme
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
