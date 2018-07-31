@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/पुस्तकालय.css">
+</head>
+<body>
+
+  <header class="post-header">
+    <h1 align="center"><big><big>{{ page.title | escape }}</big></big><align="center" /h1>
+  </header>
+
+<div class="container">
+  <br/> <br/>
+
+  <div class="row">
+    <div class="col-md-2" id="select_genre">
+    </div>
+  </div><!-- End: row -->
+
+  <div class="row" id="bookData">
+  </div>
+
+</div> <!-- End: container -->
+
+<br/> <br/>
+<script src="books/data.js"></script>
+<script>
+function csvToArray(csvString) {
+  var list = csvString.split(",");
+  var set = new Set();
+  for (var i=0; i<list.length; i++)
+  {
+    set.add(list[i].trim());
+  }
+  return Array.from(set);
+}
+
+function loadMenu() {
+
+  var formData = '<form> <select class="form-control" id="genre" onChange="loadBooks()">\n';
+  formData += '<option value="All">All Genres</option>\n';
+
+  var genreSet = new Set();
+  for (var i=0;i<NUM_BOOKS;i++)
+  {
+    var book = BOOKS[i];
+    var items = csvToArray(book['genre']);
+    for(var j=0;j<items.length;j++)
+    {
+      genreSet.add(items[j]);
+    }
+  }
+
+  console.log(genreSet);
+  var genreSet = Array.from(genreSet);
+  console.log(genreSet[0]);
+
+  for (var i=0;i<genreSet.length;i++)
+  {
+    console.log(genreSet[i]);
+    formData += '<option value="' + genreSet[i] + '">' + genreSet[i] + '</option>\n';
+  }
+  formData += '</select>';
+  formData += '</form>';
+  document.getElementById("select_genre").innerHTML = formData;
+
+}
+
+
+function isBookGenre(genreList, queryGenre) {
+  return genreList.includes(queryGenre);
+}
+
+
+function loadBooks() {
+
+  var selectedGenre = document.getElementById("genre").value;
+  var bookData = "";
+  var count = 0;
+
+  console.log('Showing genre: ' + selectedGenre);
+  console.log(BOOKS);
+  for (var i=0;i<NUM_BOOKS;i++)
+  {
+    var book = BOOKS[i];
+    if (!(selectedGenre == "All" || isBookGenre(BOOKS[i]["genre"], selectedGenre)))
+    	continue;
+
+    count += 1;
+    bookData += '<DIV class="col-xs-4 col-md-2 parent">\n';
+    bookData += '\t<A href="' + book["url"] + '"><IMG src="' + book["image"] + '" class="img-responsive book" /></A>\n';
+    bookData += '</DIV>\n';
+
+    if (count % 3 == 0)
+    {
+      if (count % 6 == 0)
+      { /* Add the shelf. */
+        bookData += '<DIV class="col-xs-12 shelf"></DIV>\n';
+      } else {
+        /* Add the shelf for smaller screens. */
+        bookData += '<DIV class="col-xs-12 shelf hidden-md hidden-lg"></DIV>\n';
+      }
+    }
+  }
+  console.log('Displayed ' + count + ' book(s).');
+
+  /* At this point, we are done displaying all the books we had to display.
+     If required, fill empty books to complete the shelf */
+  if (count % 6 != 0)
+  {
+    while (count % 6 != 0)
+    {
+      //console.log('Added Empty Book.');
+      bookData += '<DIV class="col-xs-4 col-md-2 parent"></DIV>';
+      count += 1;
+      if (count % 6 == 0)
+      { /* Add the shelf. */
+        bookData += '<DIV class="col-xs-12 shelf"></DIV>\n';
+      }
+    }
+  }
+
+  document.getElementById("bookData").innerHTML = bookData;
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>loadMenu();</script>
+<script>loadBooks();</script>
+
+
+</body>
+</html>
+
