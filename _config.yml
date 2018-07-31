@@ -30,8 +30,10 @@ sass:
 remote_theme: shkr/tale
 
 header_pages:
-  - about
-  - पुस्तकालय
+  - url: about
+    title: About
+  - url: पुस्तकालय
+    title: Bookshelf
 
 # Resume Theme
 resume_theme:   default
