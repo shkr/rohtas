@@ -1,7 +1,10 @@
 ---
-layout: solitary
+layout: post
 title:  "Hacker's guide to healthcare data"
 comments: true
+redirect_from:
+    - 2018-05-25-hackers-guide-to-healthcare-data 
+
 ---
 
 
