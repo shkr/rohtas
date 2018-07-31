@@ -12,7 +12,8 @@ IMAGE_HEIGHT = 248
 TEMPLATE =  """"<SEQ_NUM>": {
     "title": "<TITLE>",
     "image": "<GOODREADS_IMAGE_URL>",
-    "genre": "<GENRE>"
+    "genre": "<GENRE>",
+    "url": "<URL>"
   }"""
 BOOKS = json.load(open("books.json"))
 
@@ -57,6 +58,8 @@ def generate_js():
         book_data = TEMPLATE.replace("<TITLE>", book.get('title'))
         book_data = book_data.replace("<SEQ_NUM>", str(idx))
         book_data = book_data.replace("<GOODREADS_IMAGE_URL>", image)
+        book_data = book_data.replace("<URL>", book.get('goodreads').get('url'))
+        print(book_data)
         book_data = book_data.replace("<GENRE>", book.get('genre').replace(" ", ""))
         if book.get('goodreads').get('myreview'):
             book_data = book_data[:-4] + ",\n"

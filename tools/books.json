@@ -1,23 +1,89 @@
 [
     {
-          "title": "Pale Blue Dot",
-          "author": "Carl Sagan",
-          "genre": "Science, Non Fiction, Philosophy",
+          "title": "Nonlinear dynamics and Chaos",
+          "author": "Stprgatz",
+          "genre": "Systems Engineering",
           "goodreads": {
-              "url": "https://www.goodreads.com/book/show/61663.Pale_Blue_Dot_",
-              "image": "https://d.gr-assets.com/books/1432031108l/61663.jpg",
-              "genre": "Science, Non Fiction, Science > Astronomy, Space, Philosophy"
+              "url": "https://www.goodreads.com/book/show/116164.Nonlinear_Dynamics_and_Chaos",
+              "image": "https://images.gr-assets.com/books/1302126704l/116164.jpg"
           }
     },
 
     {
-          "title": "Contact",
+          "title": "Web of Life",
           "author": "Carl Sagan",
-          "genre": "Science Fiction, Fiction",
+          "genre": "Systems Engineering, Biology",
           "goodreads": {
-              "url": "https://www.goodreads.com/book/show/61666.Contact",
-              "image": "https://d.gr-assets.com/books/1408792653l/61666.jpg",
-              "genre": "Science Fiction, Fiction, Science Fiction Fantasy, Space, Classics, Fantasy, Novels, Speculative Fiction, Religion, Science > Astronomy"
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+
+  {
+          "title": "India After Gandhi",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+
+  {
+          "title": "Land of the seven rivers",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+
+  {
+          "title": "Land of the firebird",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+
+  {
+          "title": "Three Daugters of China",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+  {
+          "title": "Mussolini",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+  {
+          "title": "Mysterious Flame of Queen Loana",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
+          }
+    },
+  {
+          "title": "Labyrinths",
+          "author": "Carl Sagan",
+          "genre": "Systems Engineering, Biology",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life",
+              "image": "https://images.gr-assets.com/books/1320401635l/314114.jpg"
           }
     }
 ]
+

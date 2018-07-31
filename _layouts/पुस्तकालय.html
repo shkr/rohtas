@@ -1,199 +1,200 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <meta charset="utf-8">
-
-
-  <link href="lib/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/पुस्तकालय.css">
-  <script type='text/javascript' src="js/data.js"></script>
-  <script type='text/javascript' src="js/book_loader.js"></script>
 </head>
-<BODY>
+<body>
 
+  <header class="post-header">
+    <h1 align="center"><big><big>{{ page.title | escape }}</big></big><align="center" /h1>
+  </header>
 
 <div class="container">
   <br/> <br/>
 
   <div class="row">
-    <div class="col-md-7 header">
-      पुस्तकालय
-    </div>
     <div class="col-md-3">
       <form>
         <!--<INPUT type="text" placeholder="Search" class="form-control"/> -->
       </form>
     </div>
-    <div class="col-md-2">
-      <form>
-        <select class="form-control" id="genre" onChange="loadBooks()">
-          <option value="All">All Genres</option>
-          <option value="ScienceFiction">Science Fiction</option>
-          <option value="Fiction">Fiction</option>
-          <option value="Science">Science</option>
-          <option value="Humor">Humor</option>
-          <option value="Adventure">Adventure</option>
-          <option value="NonFiction">Non Fiction</option>
-          <option value="Philosophy">Philosophy</option>
-          <option value="Business">Business</option>
-          <option value="Management">Management</option>
-          <option value="Leadership">Leadership</option>
-          <option value="SelfHelp">Self Help</option>
-          <option value="Finance">Finance</option>
-          <option value="Mystery">Mystery</option>
-          <option value="Horror">Horror</option>
-          <option value="ShortStories">Short Stories</option>
-        </select>
-      </form>
+    <div class="col-md-2" id="select_genre">
     </div>
   </div><!-- End: row -->
 
-  <div class="row" id="bookData"></div>
+  <div class="row" id="bookData">
+  </div>
 
 </div> <!-- End: container -->
 
 <br/> <br/>
 
-<script type='text/javascript' src="lib/jquery/2.0.2/jquery.min.js"></script>
-<script type='text/javascript' src="lib/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+var NUM_BOOKS = 9;
+var BOOKS = {
+"0": {
+    "title": "Nonlinear dynamics and Chaos",
+    "image": "images/116164.jpg",
+    "genre": "Systems Engineering",
+    "url": "https://www.goodreads.com/book/show/116164.Nonlinear_Dynamics_and_Chaos"
+  },
+"1": {
+    "title": "Web of Life",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"2": {
+    "title": "India After Gandhi",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"3": {
+    "title": "Land of the seven rivers",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"4": {
+    "title": "Land of the firebird",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"5": {
+    "title": "Three Daugters of China",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"6": {
+    "title": "Mussolini",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"7": {
+    "title": "Mysterious Flame of Queen Loana",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  },
+"8": {
+    "title": "Labyrinths",
+    "image": "images/314114.jpg",
+    "genre": "Systems Engineering, Biology",
+    "url": "https://www.goodreads.com/book/show/314114.The_Web_of_Life"
+  }
+}
 
+function csvToArray(csvString) {
+  var list = csvString.split(",");
+  var set = new Set();
+  for (var i=0; i<list.length; i++)
+  {
+    set.add(list[i].trim());
+  }
+  return Array.from(set);
+}
+
+function loadMenu() {
+
+  var formData = '<form> <select class="form-control" id="genre" onChange="loadBooks()">\n';
+  formData += '<option value="All">All Genres</option>\n';
+
+  var genreSet = new Set();
+  for (var i=0;i<NUM_BOOKS;i++)
+  {
+    var book = BOOKS[i];
+    var items = csvToArray(book['genre']);
+    for(var j=0;j<items.length;j++)
+    {
+      genreSet.add(items[j]);
+    }
+  }
+
+  console.log(genreSet);
+  var genreSet = Array.from(genreSet);
+  console.log(genreSet[0]);
+
+  for (var i=0;i<genreSet.length;i++)
+  {
+    console.log(genreSet[i]);
+    formData += '<option value="' + genreSet[i] + '">' + genreSet[i] + '</option>\n';
+  }
+  formData += '</select>';
+  formData += '</form>';
+  document.getElementById("select_genre").innerHTML = formData;
+
+}
+
+
+function isBookGenre(genreList, queryGenre) {
+  return genreList.includes(queryGenre);
+}
+
+
+function loadBooks() {
+
+  var selectedGenre = document.getElementById("genre").value;
+  var bookData = "";
+  var count = 0;
+
+  console.log('Showing genre: ' + selectedGenre);
+  console.log(BOOKS);
+  for (var i=0;i<NUM_BOOKS;i++)
+  {
+    var book = BOOKS[i];
+    if (!(selectedGenre == "All" || isBookGenre(BOOKS[i]["genre"], selectedGenre)))
+    	continue;
+
+    count += 1;
+    bookData += '<DIV class="col-xs-4 col-md-2 parent">\n';
+    bookData += '\t<A href="' + book["url"] + '"><IMG src="' + book["image"] + '" class="img-responsive book" /></A>\n';
+    bookData += '</DIV>\n';
+
+    if (count % 3 == 0)
+    {
+      if (count % 6 == 0)
+      { /* Add the shelf. */
+        bookData += '<DIV class="col-xs-12 shelf"></DIV>\n';
+      } else {
+        /* Add the shelf for smaller screens. */
+        bookData += '<DIV class="col-xs-12 shelf hidden-md hidden-lg"></DIV>\n';
+      }
+    }
+  }
+  console.log('Displayed ' + count + ' book(s).');
+
+  /* At this point, we are done displaying all the books we had to display.
+     If required, fill empty books to complete the shelf */
+  if (count % 6 != 0)
+  {
+    while (count % 6 != 0)
+    {
+      //console.log('Added Empty Book.');
+      bookData += '<DIV class="col-xs-4 col-md-2 parent"></DIV>';
+      count += 1;
+      if (count % 6 == 0)
+      { /* Add the shelf. */
+        bookData += '<DIV class="col-xs-12 shelf"></DIV>\n';
+      }
+    }
+  }
+
+  document.getElementById("bookData").innerHTML = bookData;
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>loadMenu();</script>
 <script>loadBooks();</script>
 
 
-
-</BODY>
+</body>
 </html>
 
-<!DOCTYPE html>
-<html>
-
-  {% include _about_head.html %}
-
-  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
-
-    <div class="wrapper" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="telephone" content="{{ site.data.about.resume_contact_telephone }}"/>
-      <meta itemprop="address" content="{{ site.data.about.resume_contact_address }}"/>
-
-      <header class="page-header">
-
-        <!-- You can turn off the avatar in _config.yml by setting to false -->
-        {% if site.data.about.resume_avatar == 'true' %}
-        <img src="https://avatars0.githubusercontent.com/u/5184832" alt="my photo" class="avatar no-print" itemprop="image">
-        {% endif %}
-
-        <!-- Your name is defined in the _config.yml file -->
-        <h1 class="header-name" itemprop="name">{{ site.data.about.resume_name }}</h1>
-
-        <!-- Contact buttons don't work in print, configure in the _config.yml file, remove "print-only" to display always. -->
-        <div class="header-contact-info print-only">
-          <p>{{ site.data.about.resume_header_contact_info }}</p>
-        </div>
-
-        <div class="title-bar no-print">
-
-          <!-- Your title is also defined in the _config.yml file -->
-          <h2 class="header-title" itemprop="jobTitle">{{ site.data.about.resume_title }}</h2>
-
-          <!-- This is the markup for the icon links; moved out to an include because it's very verbose, and you shouldn't ever need to edit the markup (unless you want to re-order the icons); if you want to customize which links appear, define them in the _config.yml file -->
-          {% include _about_icon_links.html %}
-        </div>
-
-        <div class="executive-summary no-print" itemprop="description">
-          <center> {{ site.data.about.resume_header_intro }} <center>
-        </div>
-
-      </header>
-
-      {% if site.data.about.resume_section_projects %}
-      <!-- begin Projects -->
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Projects</h2>
-        </header>
-
-        {% for project in site.data.projects %}
-        <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
-          <meta itemprop="creator" content="{{ site.data.about.resume_name }}" itemtype="http://schema.org/Person" />
-          <h3 class="resume-item-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }}</a>{% else %}{{ project.project }}{% endif %}</h3>
-          {% if project.duration and project.role %}
-          <h4 class="resume-item-details" itemprop="description">{{ project.role }}  &bull; {{ project.duration }}</h4>
-          {% endif %}
-          <p class="resume-item-copy">{{ project.description }}</p>
-        </div>
-        {% endfor %}
-
-      </section>
-      <!-- end Projects -->
-      {% endif %}
-
-      {% if site.data.about.resume_section_interests %}
-      <!-- begin Interests -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Interests</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            {% for interest in site.data.interests %}
-            <li>{{ interest.description }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Interests -->
-      {% endif %}
-
-      {% if site.data.about.resume_section_experience %}
-      <!-- begin Experience -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Experience</h2>
-        </header>
-
-        {% for job in site.data.experience %}
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
-          <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
-          <p class="resume-item-copy">{{ job.summary }}</p>
-        </div><!-- end of resume-item -->
-        {% endfor %}
-
-      </section>
-      <!-- end Experience -->
-      {% endif %}
-
-      {% if site.data.about.resume_print_social_links %}
-      <!-- begin Print Social Links -->
-      <section class="content-section print-only">
-
-        <header class="section-header">
-          <h2>Social Links</h2>
-        </header>
-
-        <div class="resume-item">
-        {% include _about_print_social_links.html %}
-        </div>
-
-      </section>
-      <!-- end Print Social Links -->
-      {% endif %}
-
-      <footer class="page-footer">
-        <p class="footer-line"></p>
-      </footer>
-
-    </div>
-
-  </body>
-
-</html>
