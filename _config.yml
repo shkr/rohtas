@@ -30,9 +30,8 @@ sass:
 remote_theme: shkr/tale
 
 header_pages:
-  - abous.md
-  - पुस्तकालय.md
-  - resume.md
+  - about
+  - पुस्तकालय
 
 # Resume Theme
 resume_theme:   default
@@ -42,6 +41,8 @@ paginate: 5
 
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
