@@ -30,7 +30,9 @@ sass:
 theme: tale
 
 header_pages:
-  - about.md
+  - abous.md
+  - पुस्तकालय.md
+  - resume.md
 
 # Resume Theme
 resume_theme:   default

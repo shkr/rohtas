@@ -54,17 +54,12 @@ def generate_html():
 def generate_js():
     js = ""
     for idx, book in enumerate(BOOKS):
-        image = os.path.join('images', _get_filename_from_url(book.get('goodreads').get('image')))
+        image = os.path.join('books/images', _get_filename_from_url(book.get('goodreads').get('image')))
         book_data = TEMPLATE.replace("<TITLE>", book.get('title'))
         book_data = book_data.replace("<SEQ_NUM>", str(idx))
         book_data = book_data.replace("<GOODREADS_IMAGE_URL>", image)
         book_data = book_data.replace("<URL>", book.get('goodreads').get('url'))
-        print(book_data)
         book_data = book_data.replace("<GENRE>", book.get('genre').replace(" ", ""))
-        if book.get('goodreads').get('myreview'):
-            book_data = book_data[:-4] + ",\n"
-            book_data += '    "review": "%s"' %book.get('goodreads').get('myreview')
-            book_data += '\n  }'
         js += book_data
         js += ",\n"
     js = js[:-2]
