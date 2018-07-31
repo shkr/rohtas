@@ -39,13 +39,13 @@ var BOOKS = {
 "6": {
     "title": "The Mysterious Flame of Queen Loana",
     "image": "books/images/10503.jpg",
-    "genre": "Fiction,Italian",
+    "genre": "Fiction,Sociology,Sociology>Italy",
     "url": "https://www.goodreads.com/book/show/10503.The_Mysterious_Flame_of_Queen_Loana"
   },
 "7": {
     "title": "Labyrinths: Selected Stories and Other Writings ",
     "image": "books/images/17717.jpg",
-    "genre": "Fiction,World",
+    "genre": "Fiction,Culture>World",
     "url": "https://www.goodreads.com/book/show/17717.Labyrinths"
   },
 "8": {
