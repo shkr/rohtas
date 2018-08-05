@@ -1,4 +1,4 @@
-var NUM_BOOKS = 18;
+var NUM_BOOKS = 19;
 var BOOKS = {
 "0": {
     "title": "Nonlinear dynamics and Chaos",
@@ -107,5 +107,11 @@ var BOOKS = {
     "image": "bookshelf/images/5846.jpg",
     "genre": "Culture>SoutheastAsia",
     "url": "https://www.goodreads.com/book/show/5846.Beyond_Belief"
+  },
+"18": {
+    "title": "Justice: What's the Right Thing to Do?",
+    "image": "bookshelf/images/6452731.jpg",
+    "genre": "Culture>World",
+    "url": "https://www.goodreads.com/book/show/6452731-justice"
   }
 }
