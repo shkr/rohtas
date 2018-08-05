@@ -165,6 +165,15 @@
               "url": "https://www.goodreads.com/book/show/5846.Beyond_Belief",
               "image": "https://images.gr-assets.com/books/1386924109l/5846.jpg"
           }
+    },
+   {
+          "title": "Justice: What's the Right Thing to Do?",
+          "author": " Michael J. Sandel",
+          "genre": "Culture > World",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/6452731-justice",
+              "image": "https://images.gr-assets.com/books/1441517195l/6452731.jpg"
+          }
     }
 
 ]
