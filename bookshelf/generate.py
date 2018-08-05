@@ -15,7 +15,7 @@ TEMPLATE =  """"<SEQ_NUM>": {
     "genre": "<GENRE>",
     "url": "<URL>"
   }"""
-BOOKS = json.load(open("books.json"))
+BOOKS = json.load(open("bookshelf.json"))
 
 
 def resize(src_image, dst_image):
@@ -36,7 +36,7 @@ def download(url, dst_image):
 
 def generate_html():
     genres = []
-    books = BOOKS.get('books')
+    books = BOOKS.get('bookshelf')
     for book in books:
         genre_list = book.get('genre').split(',')
         for genre in genre_list:
@@ -54,7 +54,7 @@ def generate_html():
 def generate_js():
     js = ""
     for idx, book in enumerate(BOOKS):
-        image = os.path.join('books/images', _get_filename_from_url(book.get('goodreads').get('image')))
+        image = os.path.join('bookshelf/images', _get_filename_from_url(book.get('goodreads').get('image')))
         book_data = TEMPLATE.replace("<TITLE>", book.get('title'))
         book_data = book_data.replace("<SEQ_NUM>", str(idx))
         book_data = book_data.replace("<GOODREADS_IMAGE_URL>", image)

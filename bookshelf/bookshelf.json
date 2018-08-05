@@ -129,6 +129,43 @@
               "url": "https://www.goodreads.com/book/show/9516.Persepolis",
               "image": "https://images.gr-assets.com/books/1425871473l/9516.jpg"
           }
+    },
+   {
+          "title": "Pattern Classification",
+          "author": "David G. Stork, Richard O. Duda, Peter E. Hart)",
+          "genre": "Probability, Systems",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/85020.Pattern_Classification",
+              "image": "https://images.gr-assets.com/books/1348571978l/85020.jpg"
+          }
+    },
+    {
+          "title": "Elements of Information Theory",
+          "author": "Thomas M. Cover,Joy A. Thomas",
+          "genre": "Probability",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/433439.Elements_of_Information_Theory",
+              "image": "https://images.gr-assets.com/books/1388256379l/433439.jpg"
+          }
+    },
+   {
+          "title": "Sandokan: The Pirates of Malaysia",
+          "author": "Emilio Salgari,Nico Lorenzutti",
+          "genre": "Fiction, Geography > Southeast Asia",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/1515142.Sandokan",
+              "image": "https://images.gr-assets.com/books/1478934108l/1515142.jpg"
+          }
+    },
+   {
+          "title": "Beyond Belief: Islamic Excursions Among the Converted Peoples",
+          "author": "V.S. Naipaul",
+          "genre": "Culture > Southeast Asia",
+          "goodreads": {
+              "url": "https://www.goodreads.com/book/show/5846.Beyond_Belief",
+              "image": "https://images.gr-assets.com/books/1386924109l/5846.jpg"
+          }
     }
+
 ]
 
