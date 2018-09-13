@@ -174,7 +174,15 @@
               "url": "https://www.goodreads.com/book/show/6452731-justice",
               "image": "https://images.gr-assets.com/books/1441517195l/6452731.jpg"
           }
+    },
+  {
+    "title": "Invisible Cities",
+    "author": "Italo_Calvino",
+    "genre": "Culture > World",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/9809.Invisible_Cities",
+      "image": "https://images.gr-assets.com/books/1468623303l/9809.jpg"
     }
-
+  }
 ]
 
