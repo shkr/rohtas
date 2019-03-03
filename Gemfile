@@ -36,4 +36,3 @@ gem "jekyll-remote-theme"
 
 # Gem redirect
 gem 'jekyll-redirect-from'
-
