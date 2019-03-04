@@ -15,7 +15,7 @@ TEMPLATE =  """"<SEQ_NUM>": {
     "genre": "<GENRE>",
     "url": "<URL>"
   }"""
-BOOKS = json.load(open("bookshelf.json"))
+BOOKS = json.load(open("books.json"))
 
 
 def resize(src_image, dst_image):
