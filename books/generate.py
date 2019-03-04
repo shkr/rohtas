@@ -34,27 +34,27 @@ def download(url, dst_image):
     urllib.request.urlretrieve(url, dst_image)
 
 
-def generate_html():
-    genres = []
-    books = BOOKS.get('bookshelf')
-    for book in books:
-        genre_list = book.get('genre').split(',')
-        for genre in genre_list:
-            genre = genre.strip()
-            if genre not in genres:
-                genres.append(genre)
+# def generate_html():
+#     genres = []
+#     books = BOOKS.get('bookshelf')
+#     for book in books:
+#         genre_list = book.get('genre').split(',')
+#         for genre in genre_list:
+#             genre = genre.strip()
+#             if genre not in genres:
+#                 genres.append(genre)
 
-    html = '<OPTION value="All">All Genres</OPTION>\n'
-    for genre in genres:
-        html += '<OPTION value="%s">%s</OPTION>\n' %(genre.replace(" ", ""), genre)
+#     html = '<OPTION value="All">All Genres</OPTION>\n'
+#     for genre in genres:
+#         html += '<OPTION value="%s">%s</OPTION>\n' %(genre.replace(" ", ""), genre)
 
-    return html
+#     return html
 
 
 def generate_js():
     js = ""
     for idx, book in enumerate(BOOKS):
-        image = os.path.join('bookshelf/images', _get_filename_from_url(book.get('goodreads').get('image')))
+        image = os.path.join('books/images', _get_filename_from_url(book.get('goodreads').get('image')))
         book_data = TEMPLATE.replace("<TITLE>", book.get('title'))
         book_data = book_data.replace("<SEQ_NUM>", str(idx))
         book_data = book_data.replace("<GOODREADS_IMAGE_URL>", image)
