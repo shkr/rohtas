@@ -3,8 +3,8 @@
 - company: <a href="https://hypertrack.com">Hypertrack Inc</a>
   position: Lead Data Scientist
   duration: August, 2018 &mdash; February, 2019
-  summary: Building data pipelines, designing algorithms to make accurate and descriptive stories out of workforce movement. Join me! Seeking machine learning engineers, send an email to shashank@hypertrack.io
-  list:
+  summary: Building data pipelines, designing algorithms to make accurate and descriptive stories out of workforce movement.            
+  list: Some of my other projects:<ul class="resume-item-list"><li>Places of interest identification - Designed and implemented the pipeline to look at GPS data from 5000+ devices and find places of interest such as home and work for each device</li><li>Transit Classification - designed and implemented an algorithm to classify route taken by device into mode of transportation such as, subway, car, flight, ferry</li><li>Delivery Trip Activity Segmentation - designed and implemented an algorithm to segment delivery trip into pickup, parking, walking, dropping off and delivery</li>
   details:
 # Amino Inc
 - company: <a href="https://amino.com">Amino Inc</a>
