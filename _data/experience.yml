@@ -4,7 +4,7 @@
   position: Lead Data Scientist
   duration: August, 2018 &mdash; February, 2019
   summary: I worked on data pipelines and algorithms to make accurate and descriptive stories out of workforce movement.            
-  list: Some of my projects:<ul class="resume-item-list"><li>Places of interest identification - Designed and implemented a highly scalable pipeline to process GPS data from 5000+ devices and identify places of interest such as home and work for each device</li><li>Transit Classification - designed and implemented an algorithm to classify route taken by device into mode of transportation - subway, car, flight, ferry</li><li>Delivery Trip Activity Segmentation - designed and implemented an algorithm to segment delivery trip into pickup, parking, walking, dropping off and delivery</li>
+  list: Some of my projects:<ul class="resume-item-list"><li>Places of interest identification - Designed and implemented a highly scalable pipeline to process GPS data from 5000+ devices and identify places of interest such as home and work for each device using scala, elasticsearch, cron utils, docker and kubernetes</li><li>Transit Classification - designed and implemented an algorithm to classify route taken by device into mode of transportation - subway, car, flight, ferry</li><li>Delivery Trip Activity Segmentation - designed and implemented an algorithm to segment delivery trip into pickup, parking, walking, dropping off and delivery</li>
   details:
 # Amino Inc
 - company: <a href="https://amino.com">Amino Inc</a>
