@@ -36,8 +36,10 @@ header_pages:
     title: About
   - url: पुस्तकालय
     title: Books
-  - url: Music
+  - url: music
     title: Music
+  - url: https://medium.com/@shshnkshkr
+    title: Medium
 
 # Resume Theme
 resume_theme:   default
