@@ -38,7 +38,7 @@ header_pages:
     title: Books
   - url: music
     title: Music
-  - url: https://medium.com/@shshnkshkr
+  - url: medium
     title: Medium
 
 # Resume Theme
