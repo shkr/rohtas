@@ -37,3 +37,20 @@ newsstream on your own. If you are not on the desktop. Inoreadr has iOS and Andr
 
 Perhaps it would be a good idea to choose every author, and pick and choose what you read. Just like your food.
 No manipulation. 
+
+
+Ubuntu - 
+http://www.ubuntubuzz.com/2017/04/how-to-import-opml-of-rss-feeds-in-thunderbird.html
+
+Custom - 
+Zapier integration
+
+Mac - 
+Vienna
+
+iOS -
+Inoreader
+
+Android - 
+Inoreader
+
