@@ -201,6 +201,51 @@
       "url": "https://www.goodreads.com/book/show/87665.Orthodoxy",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348323220l/87665.jpg"
     }
+  },
+    {
+    "title": "Invisible Cities",
+    "author": "Italo Calvino",
+    "genre": "Culture > World",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/9809.Invisible_Cities",
+      "image": "https://images.gr-assets.com/books/1468623303l/9809.jpg"
+    }
+  },
+    {
+    "title": "Statistical Modeling, Causal Inference, and Social Science",
+    "author": "Andrew Gelman",
+    "genre": "Probability, Biology",
+    "goodreads": {
+      "url": "https://statmodeling.stat.columbia.edu/",
+      "image": "https://i.imgur.com/ExSyLR8.jpg"
+    }
+  },
+    {
+    "title": "Cafe Hayek: Where orders emerge",
+    "author": "Don Boudreaux",
+    "genre": "Culture, Culture > United Sates, Sociology",
+    "goodreads": {
+      "url": "https://cafehayek.com/",
+      "image": "https://i.imgur.com/fyvFLUv.jpg"
+    }
+  },
+    {
+    "title": "Philisophical Economics",
+    "author": "Don't know",
+    "genre": "Probability, Sociology",
+    "goodreads": {
+      "url": "http://www.philosophicaleconomics.com/",
+      "image": "https://i.imgur.com/F7kfXl0.jpg"
+    }
+  },
+    {
+    "title": "Zat Rana Essays",
+    "author": "Zat Rana",
+    "genre": "Sociology",
+    "goodreads": {
+      "url": "https://zatrana.com/essays/",
+      "image": "https://i.imgur.com/357UNMT.jpg"
+    }
   }
 ]
 

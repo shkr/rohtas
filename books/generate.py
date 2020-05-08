@@ -77,6 +77,7 @@ def resize_book_images():
         os.mkdir('images')
 
     for book in BOOKS:
+        print("Loading {}".format(book))
         image = book.get('goodreads').get('image')
         download(image, os.path.join('original', _get_filename_from_url(image)))
         resize(os.path.join('original', _get_filename_from_url(image)), os.path.join('images', _get_filename_from_url(image)))

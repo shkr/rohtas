@@ -1,4 +1,4 @@
-var NUM_BOOKS = 22;
+var NUM_BOOKS = 27;
 var BOOKS = {
 "0": {
     "title": "Nonlinear dynamics and Chaos",
@@ -131,5 +131,35 @@ var BOOKS = {
     "image": "books/images/87665.jpg",
     "genre": "Culture,Culture>England,Sociology",
     "url": "https://www.goodreads.com/book/show/87665.Orthodoxy"
+  },
+"22": {
+    "title": "Invisible Cities",
+    "image": "books/images/9809.jpg",
+    "genre": "Culture>World",
+    "url": "https://www.goodreads.com/book/show/9809.Invisible_Cities"
+  },
+"23": {
+    "title": "Statistical Modeling, Causal Inference, and Social Science",
+    "image": "books/images/ExSyLR8.jpg",
+    "genre": "Probability,Biology",
+    "url": "https://statmodeling.stat.columbia.edu/"
+  },
+"24": {
+    "title": "Cafe Hayek: Where orders emerge",
+    "image": "books/images/fyvFLUv.jpg",
+    "genre": "Culture,Culture>UnitedSates,Sociology",
+    "url": "https://cafehayek.com/"
+  },
+"25": {
+    "title": "Philisophical Economics",
+    "image": "books/images/F7kfXl0.jpg",
+    "genre": "Probability,Sociology",
+    "url": "http://www.philosophicaleconomics.com/"
+  },
+"26": {
+    "title": "Zat Rana Essays",
+    "image": "books/images/357UNMT.jpg",
+    "genre": "Sociology",
+    "url": "https://zatrana.com/essays/"
   }
 }
