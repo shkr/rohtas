@@ -36,7 +36,7 @@ A gamut of tools to create visual artworks opens uncountable possibilities. Each
 
 ![img](https://miro.medium.com/max/1400/1*0bl1I_wHb6XDLjN0x5zM_Q.jpeg)
 
-Sol Lewitt founded conceptual art. He argues that idea alone is a work of art. The execution can wait and apply itself based on the idea. One of his compositions is the forms of a cube. In each form a section of the cube volume is made from a random selection of points. The photos are mind bending. His philosophy associates itself with my notion of programming. It is not far fetched. Think about it. Each of his artwork installations is his rendering of an idea. Then he leaves instructions to render his creations on top of its previous version. The instruction is the idea. The same art takes different forms across installations because of local conditions such as the handiwork of the people who carry out the instructions.
+Sol Lewitt founded conceptual art. He argues that idea alone is a work of art. The execution can wait and apply itself based on the idea. One of his compositions is the forms of a cube. In each form a section of the cube volume is made from a random selection of points. The photos are mind bending. Each of his artwork installations is his rendering of an idea. Then he leaves instructions to render his creations on top of its previous version. The instruction is the idea. The same art takes different forms across installations because of local conditions such as the handiwork of the people who carry out the instructions at the museum.
 
 ## Why photograph ?
 
