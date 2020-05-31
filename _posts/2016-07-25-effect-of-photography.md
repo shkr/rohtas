@@ -10,7 +10,9 @@ redirect_from:
 ## What is a photograph ?
 
 Imagine a scene. Freeze a moment when the scene is at the height of its narrative arc, capture it with a camera. The decisive point. This moment selected is put on a medium. The medium transforms the moment snapped into a visual experience. Thus a unique point in someone’s timeline where something happened is captured in one of many ways inside a photograph.
+
 ![img](https://miro.medium.com/max/1400/1*dtSYZm1-AgujuEIhgtQE4Q.jpeg)
+
 ## How does one pick a fictional scene ?
 
 Photographer McFarland is a maker. Combination printing is a technique of joining multiple negatives into one continuous photographic fiction. McFarland practices the technique with large format films. Each of his compositions culminates into a photograph which juxtaposes several points of view existing across temporal and spatial discontinuities into a single photograph.
@@ -39,4 +41,5 @@ Sol Lewitt founded conceptual art. He argues that idea alone is a work of art. T
 ## Why photograph ?
 
 ![img](https://miro.medium.com/max/1400/1*uzXO-3uo2ZnkeWPf8-zMlA.jpeg)
+
 Many times the intent and the perspective of the photograph is foreign to our mind and imagination. This forces our thoughts to question and interpret in new ways. It is a way to describe many forms of art, I think.
