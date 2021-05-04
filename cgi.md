@@ -1,0 +1,4 @@
+---
+layout: cgi
+title: CGI
+---

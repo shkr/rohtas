@@ -40,6 +40,9 @@ header_pages:
     title: Music
   - url: medium
     title: Medium
+  - url: cgi
+    title: CGI
+
 
 # Resume Theme
 resume_theme:   default
