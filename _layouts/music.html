@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/music.css">
-</head>
+---
+layout: default
+---
+{% include _about_head.html %}
 <body>
-
-
-<nav class="nav">
-    <div class="nav-container">
-      <a href="{{ site.baseurl }}/">
-        <h2 class="nav-title">{{ site.title }}</h2>
-      </a>
-
-      <ul>
-        {% for header_page in site.header_pages %}
-         <li><a href="{{ site.baseurl }}/{{ header_page.url }}">{{ header_page.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
-
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/584178450&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>
 <br/> <br/>
 
