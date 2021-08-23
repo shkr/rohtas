@@ -42,6 +42,8 @@ header_pages:
     title: Medium
   - url: cgi
     title: CGI
+  - url: vr
+    title: VR
 
 
 # Resume Theme

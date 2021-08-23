@@ -1,0 +1,4 @@
+---
+layout: vr
+title: VR
+---
