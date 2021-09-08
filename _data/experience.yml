@@ -3,7 +3,7 @@
 - company: <a href="https://hypertrack.com">Hypertrack Inc</a>
   position: Lead Data Scientist
   duration: August, 2018 &mdash; February, 2019
-  summary: I worked on data pipelines and algorithms to make accurate and descriptive stories out of workforce movement. I wrote about <a href="http://blog.hypertrack.com/blog/2018/10/04/reducing-on-demand-delivery-time-with-activity-data/">Reducing on-demand delivery time with activity data</a>. Some of my projects,
+  summary: I worked on data pipelines and algorithms to make accurate and descriptive stories out of workforce movement. I wrote about <a href="https://www.linkedin.com/pulse/reducing-on-demand-delivery-time-activity-data-shashank-shekhar/">Reducing on-demand delivery time with activity data</a>. Some of my projects,
   list: <ul class="resume-item-list"><li>Places of interest identification - Designed and implemented a highly scalable pipeline to process GPS data from 5000+ devices and identify places of interest such as home and work for each device using scala, elasticsearch, cron utils, docker and kubernetes</li><li>Transit Classification - designed and implemented an algorithm to classify route taken by device into mode of transportation - subway, car, flight, ferry</li><li>Delivery Trip Activity Segmentation - designed and implemented an algorithm to segment delivery trip into pickup, parking, walking, dropping off and delivery</li>
   details:
 # Amino Inc
