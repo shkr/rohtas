@@ -44,7 +44,8 @@ header_pages:
     title: CGI
   - url: vr
     title: VR
-
+  - url: ar
+    title: AR
 
 # Resume Theme
 resume_theme:   default
