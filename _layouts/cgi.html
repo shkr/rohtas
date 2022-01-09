@@ -4,42 +4,50 @@ layout: default
 
 <html style="background-color:black;">
 {% include _about_head.html %}
-<body>
+
 <style>
-    .row {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 4px;
+  }
+
+  .column {
+    flex: 50%;
+    padding: 0 4px;
+  }
+
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+
+  .snaps {
       display: flex;
-      flex-wrap: wrap;
-      padding: 0 4px;
-    }
-    .column {
-      flex: 50%;
-      padding: 0 4px;
-    }
-
-    .column img {
-      margin-top: 8px;
-      vertical-align: middle;
-    }
-
-    .snaps {
-        text-align: center;
-    }
+      flex-direction: column;
+      row-gap: 1em;
+  }
 </style>
-<br/> <br/>
-<div>
- <iframe width="100%" height="600px" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=1&mute=0"></iframe>
-   <div class="snaps">
-        <br/>
-        <h2>CGI</h2>
-        <br/>
-        <div class="row">
-            {% for image in site.data.cgi.images %}
-            <div class="column" style={{flex: "50%"}}>
-                <img src="{{image.path}}">
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+<body>
+<div class="snaps">
+  <br/>
+  <div class="row"> 
+      <iframe width="100%" height="600px" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=0&mute=0"></iframe>
+      <br/>
+  </div>
+  <br/>
+  <div class="row">
+      {% for image in site.data.cgi.images %}
+      <div class="column" style={{flex: "50%"}}>
+          <img src="{{image.path}}">
+      </div>
+      <br/>
+      {% endfor %}
+  </div>
+  {% comment %} <div class="row">
+    <canvas id="piano"></canvas>
+  </div> {% endcomment %}
 </div>
 </body>
 </html>
