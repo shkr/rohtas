@@ -7,47 +7,39 @@ layout: default
 
 <style>
   .row {
-    display: flex;
-    flex-wrap: wrap;
     background-color: #fff;
-    padding: 4px;
+    padding: 0.2rem;
   }
-
   .column {
-    flex: 50%;
-    padding: 0 4px;
+    padding: 0.2rem;
   }
-
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-  }
-
-  .snaps {
+  .roll {
       display: flex;
       flex-direction: column;
-      row-gap: 1em;
+      row-gap: 3em;
+  }
+  #piano {
+    background-color: black;
+    width: 100%;
+    height: 100%;
   }
 </style>
 <body>
-<div class="snaps">
+<div class="roll">
   <br/>
   <div class="row"> 
       <iframe width="100%" height="600px" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=0&mute=0"></iframe>
-      <br/>
   </div>
-  <br/>
   <div class="row">
       {% for image in site.data.cgi.images %}
-      <div class="column" style={{flex: "50%"}}>
+      <div class="column">
           <img src="{{image.path}}">
       </div>
-      <br/>
       {% endfor %}
   </div>
-  {% comment %} <div class="row">
+  <div class="row">
     <canvas id="piano"></canvas>
-  </div> {% endcomment %}
+  </div> 
 </div>
 </body>
 </html>
