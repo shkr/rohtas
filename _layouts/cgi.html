@@ -17,11 +17,6 @@ layout: default
       flex-direction: column;
       row-gap: 3em;
   }
-  #piano {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-  }
 </style>
 <body>
 <div class="roll">
@@ -37,7 +32,7 @@ layout: default
       {% endfor %}
   </div>
   <div class="row">
-    <canvas id="piano"></canvas>
+    <iframe width="100%" height="600px" frameBorder="0" src="https://webglsl.netlify.app/"></iframe>
   </div> 
 </div>
 </body>
