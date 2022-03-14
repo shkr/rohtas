@@ -5,7 +5,7 @@ layout: default
 <html style="background-color:black;">
 {% include _about_head.html %}
 
-<style>
+<style type="text/css">
   .row {
     background-color: #0000;
   }
@@ -18,6 +18,15 @@ layout: default
       flex-direction: column;
       row-gap: 0.5em;
   }
+  /* Smartphone Portrait and Landscape */
+  .mobileShow {display: none;}
+  .mobileHide { display: inline; }
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){
+    .mobileHide { display: none;}
+    .mobileShow {display: inline;}
+  }
 </style>
 <body>
 <div class="roll">
@@ -26,7 +35,12 @@ layout: default
       <iframe width="100%" height="600px" frameBorder="0" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=0&mute=0"></iframe>
   </div>
   <div class="row">
-    <iframe width="100%" height="600px" frameBorder="0" src="https://yantranik.netlify.app/"></iframe>
+    <div class="mobileShow">
+      <iframe width="100%" height="600px" frameBorder="0" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
+    </div>
+    <div class="mobileHide">
+      <iframe width="100%" height="600px" frameBorder="0" src="https://yantranik.netlify.app/"></iframe>
+    </div>
   </div>
   {% comment %} <div class="row">
     {% for image in site.data.cgi.images %}
