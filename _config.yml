@@ -38,14 +38,14 @@ header_pages:
     title: Reading-List
   - url: music
     title: Music
-  - url: medium
-    title: Medium
   - url: cgi
     title: CGI
   - url: vr
     title: VR
   - url: ar
     title: AR
+  - url: vision
+    title: Vision
 
 # Resume Theme
 resume_theme:   default
