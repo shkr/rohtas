@@ -174,15 +174,6 @@
               "url": "https://www.goodreads.com/book/show/6452731-justice",
               "image": "https://images.gr-assets.com/books/1441517195l/6452731.jpg"
           }
-    },
-  {
-    "title": "Invisible Cities",
-    "author": "Italo Calvino",
-    "genre": "Culture > World",
-    "goodreads": {
-      "url": "https://www.goodreads.com/book/show/9809.Invisible_Cities",
-      "image": "https://images.gr-assets.com/books/1468623303l/9809.jpg"
-    }
   },
   {
     "title": "The Indianized States of Southeast Asia",
@@ -193,7 +184,7 @@
       "image": "https://images.gr-assets.com/books/1348039233l/2541242.jpg"
     }
   },
-  {
+    {
     "title": "Orthodoxy",
     "author": "GK Chesterton",
     "genre": "Culture, Culture > England, Sociology",
@@ -245,6 +236,86 @@
     "goodreads": {
       "url": "https://zatrana.com/essays/",
       "image": "https://i.imgur.com/357UNMT.jpg"
+    }
+  }, {
+    "title": "Drama Games and Improvs: For the Classroom and Beyond: Games for the Classroom and Beyond",
+    "author": "Justine Jones, Mary Ann Kelley",
+    "genre": "Sociology, Culture",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/1977191.Drama_Games_and_Improvs",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347562293l/1977191.jpg"
+    }
+  },
+   {
+    "title": "Tibet – A History",
+    "author": "Sam Van Schaik",
+    "genre": "History > Tibet, Sociology, Culture",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/10638859-tibet#:~:text=Situated%20north%20of%20the%20Himalayas,context%20of%20its%20extraordinary%20history.",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51ejpVyylqL._SX331_BO1,204,203,200_.jpg"
+    }
+  },
+  {
+    "title": "Treasury of tales from the Kathasaritasagara",
+    "author": "Jayashree Bhat",
+    "genre": "History > Bharat, Sociology, Culture",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/48646749-a-treasury-of-tales-from-the-kathasaritasagara#:~:text=your%20stomach%20hurts%3F-,Or%20perhaps%20you'd%20prefer%20a%20tale%20with%20some%20good,a%20new%20generation%20of%20readers.",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51CHflO0DEL._SX319_BO1,204,203,200_.jpg"
+    }
+  },
+  {
+    "title": "Natyashashtra Of Bharatmuni",
+    "author": "Babulal Shukla Shashtri",
+    "genre": "History > Bharat, Sociology, Culture",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/9762823-the-na-t-ya-s-a-stra-of-bharatamuni#:~:text=The%20Natya%20Shastra%20(Sanskrit%3A%20%E0%A4%A8%E0%A4%BE%E0%A4%9F%E0%A5%8D%E0%A4%AF,attributed%20to%20the%20Sage%20Bharata.",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51ROSSPYUCL._SY373_BO1,204,203,200_.jpg"
+    }
+  },
+  {
+    "title": "Fabric Of Reality",
+    "author": "David Deutsch",
+    "genre": "Systems, Probability",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/177068.The_Fabric_of_Reality",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/A1D-ToX8Y-L.jpg"
+    }
+  },
+  {
+    "title": "Prime Numbers: A Computational Perspective",
+    "author": "Richard Crandall, Carl Pomerance",
+    "genre": "Systems, Probability",
+    "goodreads": {
+      "url": "https://www.goodreads.com/en/book/show/765887.Prime_Numbers",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61DZdS3eE0L.jpg"
+    }
+  },
+  {
+    "title": "Bayesian Modeling of Uncertainty in Low-Level Vision",
+    "author": "Richard Szeliski'",
+    "genre": "Systems, Probability",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/18671388-bayesian-modeling-of-uncertainty-in-low-level-vision",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61N5eLJ2QyL.jpg"
+    }
+  },
+   {
+    "title": "Remarks on Colour",
+    "author": "Ludwig Wittenstein",
+    "genre": "Systems",
+    "goodreads": {
+      "url": "https://www.goodreads.com/book/show/170131.Remarks_on_Colour",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51E4pJKvKRL.jpg"
+    }
+  },
+  {
+    "title": "Vanara: The Legend of Baali, Sugreeva and Tara",
+    "author": "Anand Neelakantan ",
+    "genre": "History > Bharat, Sociology, Culture",
+    "goodreads": {
+      "url": "https://www.goodreads.com/en/book/show/42122936",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/710BVv2vLwL.jpg"
     }
   }
 ]

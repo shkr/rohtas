@@ -1,4 +1,4 @@
-var NUM_BOOKS = 27;
+var NUM_BOOKS = 35;
 var BOOKS = {
 "0": {
     "title": "Nonlinear dynamics and Chaos",
@@ -115,51 +115,99 @@ var BOOKS = {
     "url": "https://www.goodreads.com/book/show/6452731-justice"
   },
 "19": {
-    "title": "Invisible Cities",
-    "image": "books/images/9809.jpg",
-    "genre": "Culture>World",
-    "url": "https://www.goodreads.com/book/show/9809.Invisible_Cities"
-  },
-"20": {
     "title": "The Indianized States of Southeast Asia",
     "image": "books/images/2541242.jpg",
     "genre": "History>Bharat,Geography>Bharat,History,Geography",
     "url": "https://www.goodreads.com/book/show/2541242.The_Indianized_States_of_Southeast_Asia"
   },
-"21": {
+"20": {
     "title": "Orthodoxy",
     "image": "books/images/87665.jpg",
     "genre": "Culture,Culture>England,Sociology",
     "url": "https://www.goodreads.com/book/show/87665.Orthodoxy"
   },
-"22": {
+"21": {
     "title": "Invisible Cities",
     "image": "books/images/9809.jpg",
     "genre": "Culture>World",
     "url": "https://www.goodreads.com/book/show/9809.Invisible_Cities"
   },
-"23": {
+"22": {
     "title": "Statistical Modeling, Causal Inference, and Social Science",
     "image": "books/images/ExSyLR8.jpg",
     "genre": "Probability,Biology",
     "url": "https://statmodeling.stat.columbia.edu/"
   },
-"24": {
+"23": {
     "title": "Cafe Hayek: Where orders emerge",
     "image": "books/images/fyvFLUv.jpg",
     "genre": "Culture,Culture>UnitedSates,Sociology",
     "url": "https://cafehayek.com/"
   },
-"25": {
+"24": {
     "title": "Philisophical Economics",
     "image": "books/images/F7kfXl0.jpg",
     "genre": "Probability,Sociology",
     "url": "http://www.philosophicaleconomics.com/"
   },
-"26": {
+"25": {
     "title": "Zat Rana Essays",
     "image": "books/images/357UNMT.jpg",
     "genre": "Sociology",
     "url": "https://zatrana.com/essays/"
+  },
+"26": {
+    "title": "Drama Games and Improvs: For the Classroom and Beyond: Games for the Classroom and Beyond",
+    "image": "books/images/1977191.jpg",
+    "genre": "Sociology,Culture",
+    "url": "https://www.goodreads.com/book/show/1977191.Drama_Games_and_Improvs"
+  },
+"27": {
+    "title": "Tibet – A History",
+    "image": "books/images/51ejpVyylqL._SX331_BO1,204,203,200_.jpg",
+    "genre": "History>Tibet,Sociology,Culture",
+    "url": "https://www.goodreads.com/book/show/10638859-tibet#:~:text=Situated%20north%20of%20the%20Himalayas,context%20of%20its%20extraordinary%20history."
+  },
+"28": {
+    "title": "Treasury of tales from the Kathasaritasagara",
+    "image": "books/images/51CHflO0DEL._SX319_BO1,204,203,200_.jpg",
+    "genre": "History>Bharat,Sociology,Culture",
+    "url": "https://www.goodreads.com/book/show/48646749-a-treasury-of-tales-from-the-kathasaritasagara#:~:text=your%20stomach%20hurts%3F-,Or%20perhaps%20you'd%20prefer%20a%20tale%20with%20some%20good,a%20new%20generation%20of%20readers."
+  },
+"29": {
+    "title": "Natyashashtra Of Bharatmuni",
+    "image": "books/images/51ROSSPYUCL._SY373_BO1,204,203,200_.jpg",
+    "genre": "History>Bharat,Sociology,Culture",
+    "url": "https://www.goodreads.com/book/show/9762823-the-na-t-ya-s-a-stra-of-bharatamuni#:~:text=The%20Natya%20Shastra%20(Sanskrit%3A%20%E0%A4%A8%E0%A4%BE%E0%A4%9F%E0%A5%8D%E0%A4%AF,attributed%20to%20the%20Sage%20Bharata."
+  },
+"30": {
+    "title": "Fabric Of Reality",
+    "image": "books/images/A1D-ToX8Y-L.jpg",
+    "genre": "Systems,Probability",
+    "url": "https://www.goodreads.com/book/show/177068.The_Fabric_of_Reality"
+  },
+"31": {
+    "title": "Prime Numbers: A Computational Perspective",
+    "image": "books/images/61DZdS3eE0L.jpg",
+    "genre": "Systems,Probability",
+    "url": "https://www.goodreads.com/en/book/show/765887.Prime_Numbers"
+  },
+"32": {
+    "title": "Bayesian Modeling of Uncertainty in Low-Level Vision",
+    "image": "books/images/61N5eLJ2QyL.jpg",
+    "genre": "Systems,Probability",
+    "url": "https://www.goodreads.com/book/show/18671388-bayesian-modeling-of-uncertainty-in-low-level-vision"
+  },
+"33": {
+    "title": "Remarks on Colour",
+    "image": "books/images/51E4pJKvKRL.jpg",
+    "genre": "Systems",
+    "url": "https://www.goodreads.com/book/show/170131.Remarks_on_Colour"
+  },
+"34": {
+    "title": "Vanara: The Legend of Baali, Sugreeva and Tara",
+    "image": "books/images/710BVv2vLwL.jpg",
+    "genre": "History>Bharat,Sociology,Culture",
+    "url": "https://www.goodreads.com/en/book/show/42122936"
   }
 }
