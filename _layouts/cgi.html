@@ -33,15 +33,13 @@ layout: default
   <div class="row">
     <iframe frameBorder="0" width="100%" height="100%" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
   </div>
-  <canvas id="canvas1"></canvas>
+  <canvas width="100%" id="canvas1"></canvas>
   <script>
       window.addEventListener('load', () => {
       // Projection Plane Setting
       const canvas = document.getElementById("canvas1")
-      canvas.style.width ='90%';
-      canvas.style.height='90%';
-      canvas.width  = canvas.offsetWidth*0.90;
-      canvas.height = canvas.offsetHeight*0.90;
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = 600;
 
       const ctx = canvas.getContext("2d")
       const fps = 30
