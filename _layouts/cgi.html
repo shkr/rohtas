@@ -18,9 +18,6 @@ layout: default
       flex-direction: column;
       row-gap: 0.5em;
   }
-  .item {
-    width: 100%;
-  }
 </style>
 <body>
 <div class="roll">
@@ -29,16 +26,15 @@ layout: default
       <iframe width="100%" height="600px" frameBorder="0" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=0&mute=0"></iframe>
   </div>
   <div class="row">
-    <div class="item">
-      <iframe height="600px" frameBorder="0" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
-    </div>
-    <div class="item">
-      <iframe height="600px" frameBorder="0" src="https://camera-matrix.netlify.app/"></iframe>
-    </div>
-    <div class="item">
-      <iframe height="600px" frameBorder="0" src="https://yantranik.netlify.app/"></iframe>
-    </div>
+    <iframe width="100%" height="600px" frameBorder="0" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
   </div>
+  <div class="row">
+    <iframe width="100%" height="600px" frameBorder="0" src="https://camera-matrix.netlify.app/"></iframe>
+  </div>
+  <div class="row">
+    <iframe width="100%" height="600px" frameBorder="0" src="https://yantranik.netlify.app/"></iframe>
+  </div>
+
   {% comment %} <div class="row">
     {% for image in site.data.cgi.images %}
     <div class="column">
