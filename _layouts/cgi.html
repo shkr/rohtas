@@ -8,6 +8,8 @@ layout: default
 <style type="text/css">
   .row {
     background-color: #0000;
+    height: 600px;
+    width: 100%;
   }
   .column {
     padding: 0.2rem;
@@ -23,20 +25,25 @@ layout: default
 <div class="roll">
   <br/>
   <div class="row"> 
-      <iframe width="100%" height="600px" frameBorder="0" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=0&mute=0"></iframe>
+      <iframe frameBorder="0" src="https://www.youtube.com/embed/b9kIox9MPLM?autoplay=0&mute=0"></iframe>
   </div>
   <div class="row">
-    <iframe width="100%" height="600px" frameBorder="0" src="https://camera-matrix.netlify.app/"></iframe>
+    <iframe frameBorder="0" src="https://camera-matrix.netlify.app/"></iframe>
   </div>
   <div class="row">
-    <iframe width="100%" height="600px" frameBorder="0" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
+    <iframe frameBorder="0" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
   </div>
   <div class="row">
-      <canvas width="100%" height="600px" id="canvas1"></canvas>
+      <canvas id="canvas1"></canvas>
       <script>
           window.addEventListener('load', () => {
           // Projection Plane Setting
           const canvas = document.getElementById("canvas1")
+          canvas.style.width ='100%';
+          canvas.style.height='100%';
+          canvas.width  = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+
           const ctx = canvas.getContext("2d")
           const fps = 30
           // Canvas Settings
