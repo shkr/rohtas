@@ -38,8 +38,8 @@ layout: default
           // Projection Plane Setting
           const canvas = document.getElementById("canvas1")
           const ctx = canvas.getContext("2d")
-          canvas.width = window.innerWidth
-          canvas.height = window.innerHeight
+          canvas.width = canvas.getClientWidth()
+          canvas.height = 600
           const fps = 30
           // Canvas Settings
           ctx.fillStyle = 'green';
