@@ -36,8 +36,8 @@ layout: default
       <script>
           window.addEventListener('load', () => {
           // Projection Plane Setting
-          const canvas = document.getElementById("canvas1") as HTMLCanvasElement
-          const ctx = canvas.getContext("2d") as CanvasRenderingContext2D
+          const canvas = document.getElementById("canvas1")
+          const ctx = canvas.getContext("2d")
           canvas.width = window.innerWidth
           canvas.height = window.innerHeight
           const fps = 30
@@ -62,7 +62,7 @@ layout: default
           }
           // Shape Function
           // Branch Definition
-          function drawBranch(worldEffect: WorldEffect, level: number) {
+          function drawBranch(worldEffect, level) {
               if (level >= worldEffect.max_level) return;
               ctx.beginPath();
               ctx.moveTo(0, 0);
@@ -85,7 +85,7 @@ layout: default
               }
           }
           // Fractal Definition
-          function drawFractal(worldEffect: WorldEffect) {
+          function drawFractal(worldEffect) {
               // Set World Coordinates
               // Save Settings
               ctx.save();
