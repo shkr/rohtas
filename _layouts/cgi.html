@@ -32,13 +32,25 @@ layout: default
   </div>
   <div class="row">
     <iframe frameBorder="0" width="100%" height="50%" src="https://61e831fabacbd90007712a9d--webglsl.netlify.app/"></iframe>
+  </div>
+  <div class="row">
     <canvas id="canvas1"></canvas>
     <script>
+      
+        function setCanvasSize(canvas) {
+          var parent = canvas.parentNode,
+              styles = getComputedStyle(parent),
+              w = parseInt(styles.getPropertyValue("width"), 10),
+              h = parseInt(styles.getPropertyValue("height"), 10);
+          canvas.width = w;
+          canvas.height = h;
+        }
+
+      
         window.addEventListener('load', () => {
         // Projection Plane Setting
         const canvas = document.getElementById("canvas1")
-        canvas.width  = 600;
-        canvas.height = 400;
+        setCanvasSize(canvas)
         const ctx = canvas.getContext("2d")
         const fps = 30
         // Canvas Settings
@@ -107,6 +119,7 @@ layout: default
         // Draw Function Definition
         const draw = () => {
             worldEffect.world_rotate += Math.PI * (1/180)
+            setCanvasSize(canvas)
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             drawFractal(worldEffect)
         }
